@@ -11,6 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: bd2b8d3090b4f2b48b243809f99b60c2
+  - enabled: 1
+    path: Assets/Scenes/AboutCredits.unity
+    guid: eaecb247b3f72f84786fb5404c755eef
+  - enabled: 1
+    path: Assets/Scenes/Identify.unity
+    guid: 689e2a4f7c2bf9f45bc7c037331f2d13
+  - enabled: 1
+    path: Assets/Scenes/Freeplay.unity
+    guid: b2667e8f4a65ad9438a7b2fddd357de2
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
