@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5607441663675776778}
   - component: {fileID: 1878851903770801418}
   - component: {fileID: 6183881757722189038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ClickEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 1
-    maxNumParticles: 1000
+    maxNumParticles: 5
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -4819,9 +4819,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 2013743003
-  m_SortingLayer: 1
-  m_SortingOrder: 1000
+  m_SortingLayerID: 1389359413
+  m_SortingLayer: -1
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
