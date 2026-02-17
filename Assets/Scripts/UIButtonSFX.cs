@@ -40,7 +40,7 @@ public class UIButtonSFX : MonoBehaviour,
             if (audioObj != null)
                 uiAudioSource = audioObj.GetComponent<AudioSource>();
             else
-                Debug.LogError("UIButtonSFX: UIAudi is missing");
+                Debug.LogError("UIButtonSFX: UIAudio is missing");
         }
         if (button != null)
             button.onClick.AddListener(PlayClick);
