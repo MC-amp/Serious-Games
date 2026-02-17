@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(Selectable))]
 public class UIButtonSFX : MonoBehaviour,
     IPointerEnterHandler,
     ISelectHandler
@@ -20,12 +20,18 @@ public class UIButtonSFX : MonoBehaviour,
     public float hoverCooldown = 0.05f;
 
     private static AudioSource uiAudioSource;
+
+    private Selectable selectable;
     private Button button;
+    private Toggle toggle;
+
     private float lastHoverTime;
 
     private void Awake()
     {
+        selectable = GetComponent<Selectable>();
         button = GetComponent<Button>();
+        toggle = GetComponent<Toggle>();
 
         if (uiAudioSource == null)
         {
@@ -34,10 +40,13 @@ public class UIButtonSFX : MonoBehaviour,
             if (audioObj != null)
                 uiAudioSource = audioObj.GetComponent<AudioSource>();
             else
-                Debug.LogError("UIButtonSFX: nöthin there");
+                Debug.LogError("UIButtonSFX: UIAudi is missing");
         }
+        if (button != null)
+            button.onClick.AddListener(PlayClick);
 
-        button.onClick.AddListener(PlayClick);
+        if (toggle != null)
+            toggle.onValueChanged.AddListener(OnToggleChanged);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -50,7 +59,12 @@ public class UIButtonSFX : MonoBehaviour,
         PlayHover();
     }
 
-    void PlayHover()
+    private void OnToggleChanged(bool isOn)
+    {
+        PlayClick();
+    }
+
+    private void PlayHover()
     {
         if (hoverClip == null || uiAudioSource == null)
             return;
@@ -65,7 +79,7 @@ public class UIButtonSFX : MonoBehaviour,
         uiAudioSource.pitch = 1f;
     }
 
-    void PlayClick()
+    private void PlayClick()
     {
         if (clickClip == null || uiAudioSource == null)
             return;

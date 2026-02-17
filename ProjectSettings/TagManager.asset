@@ -14,7 +14,7 @@ TagManager:
   - UI_FX
   - Water
   - UI
-  - 
+  - Compendium
   - 
   - 
   - 
@@ -41,14 +41,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: UI_FX
-    uniqueID: 1389359413
+  - name: UI
+    uniqueID: 2013743003
+    locked: 0
+  - name: Compendium
+    uniqueID: 4229787531
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
-    uniqueID: 2013743003
+  - name: UI_FX
+    uniqueID: 1389359413
     locked: 0
   m_RenderingLayers:
   - Default

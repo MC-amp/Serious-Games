@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ReturnToMenuButton : MonoBehaviour
 {
@@ -7,6 +6,9 @@ public class ReturnToMenuButton : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene(menuSceneName);
+        if (SceneLoader.Instance != null)
+            SceneLoader.Instance.LoadScene(menuSceneName);
+        else
+            Debug.LogError("SceneLoader.Instance is null (did Initializing scene run?)");
     }
 }
