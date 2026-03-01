@@ -7,10 +7,10 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    [Header("Persistent UI scene that should NEVER be unloaded")]
+    [Header("Persistent UI")]
     public string persistentUISceneName = "PersistentUI";
 
-    [Header("Delay before loading (seconds)")]
+    [Header("Delay before löading (seconds)")]
     public float delaySeconds = 1f;
 
     private bool isLoading = false;
@@ -40,15 +40,12 @@ public class SceneLoader : MonoBehaviour
         if (delaySeconds > 0f)
             yield return new WaitForSecondsRealtime(delaySeconds);
 
-        // Load target scene additively
         var loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!loadOp.isDone) yield return null;
 
-        // Set it active
         Scene newScene = SceneManager.GetSceneByName(sceneName);
         SceneManager.SetActiveScene(newScene);
 
-        // Unload EVERYTHING except persistent UI + the new scene
         var toUnload = new List<Scene>();
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {

@@ -1,14 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ReturnToMenuButton : MonoBehaviour
+public class ReturnToMenu : MonoBehaviour
 {
-    public string menuSceneName = "MainMenu";
+    public string mainMenuSceneName = "MainMenu";
 
-    public void ReturnToMenu()
+    public void ReturnToMainMenu()
     {
-        if (SceneLoader.Instance != null)
-            SceneLoader.Instance.LoadScene(menuSceneName);
-        else
-            Debug.LogError("SceneLoader.Instance is null (did Initializing scene run?)");
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }

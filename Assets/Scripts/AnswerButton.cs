@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -7,7 +7,7 @@ public class AnswerButton : MonoBehaviour
     [Header("Tags")]
     public string answerTag;
 
-    [Header("Right or Wröng")]
+    [Header("Right or Wrong")]
     public CanvasGroup correctGroup;
     public CanvasGroup wrongGroup;
 
@@ -15,40 +15,111 @@ public class AnswerButton : MonoBehaviour
     public float visibleTime = 1.0f;
     public float fadeDuration = 1.0f;
 
-    Button button;
+    [Header("Scene References")]
+    public GameObject insectsSmallParent;
+
+    public GameObject insectsLargeParent;
+
+    [Header("SFX (optional)")]
+    public AudioSource audioSource;
+    public AudioClip correctClip;
+    public AudioClip wrongClip;
+
+    [Header("On Correct: FlyAway Selected Icon")]
+    public bool flyAwayUsesAnimationEvent = true;
+
+    private Button button;
+
+    private const float LOCK_ANSWER_SECONDS = 2f;
 
     private void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(CheckAnswer);
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+
+        if (correctGroup != null) correctGroup.alpha = 0f;
+        if (wrongGroup != null) wrongGroup.alpha = 0f;
     }
 
     void CheckAnswer()
     {
-        string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
+        if (InsectSelectionManager.Instance == null)
+            return;
 
+        string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
         if (string.IsNullOrEmpty(selectedTag))
             return;
 
         StopAllCoroutines();
 
-        if (selectedTag == answerTag)
-            StartCoroutine(ShowAndFade(correctGroup));
+        bool isCorrect = (selectedTag == answerTag);
+
+        if (isCorrect)
+        {
+
+            PlaySfx(correctClip);
+
+            if (correctGroup != null)
+                StartCoroutine(ShowAndFade(correctGroup));
+
+            StartCoroutine(CorrectFlowRoutine());
+        }
         else
-            StartCoroutine(ShowAndFade(wrongGroup));
+        {
+            PlaySfx(wrongClip);
+
+            if (wrongGroup != null)
+                StartCoroutine(ShowAndFade(wrongGroup));
+        }
+    }
+
+    IEnumerator CorrectFlowRoutine()
+    {
+        yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
+
+        if (insectsSmallParent != null)
+            insectsSmallParent.SetActive(true);
+
+        if (insectsLargeParent != null)
+        {
+            for (int i = 0; i < insectsLargeParent.transform.childCount; i++)
+                insectsLargeParent.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        yield return null;
+
+        FlyAwaySelectedIcon();
+    }
+
+    void FlyAwaySelectedIcon()
+    {
+        GameObject selected = InsectSelectionManager.Instance.currentlySelected;
+        if (selected == null) return;
+
+        InsectButton insectBtn = selected.GetComponent<InsectButton>();
+        if (insectBtn != null)
+            insectBtn.PlayFlyAwayAndDisable(flyAwayUsesAnimationEvent);
+    }
+
+    void PlaySfx(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+            audioSource.PlayOneShot(clip);
     }
 
     IEnumerator ShowAndFade(CanvasGroup group)
     {
-        correctGroup.alpha = 0;
-        wrongGroup.alpha = 0;
+        if (correctGroup != null) correctGroup.alpha = 0f;
+        if (wrongGroup != null) wrongGroup.alpha = 0f;
 
-        group.alpha = 1;
+        group.alpha = 1f;
 
         yield return new WaitForSecondsRealtime(visibleTime);
 
         float timer = 0f;
-
         while (timer < fadeDuration)
         {
             timer += Time.unscaledDeltaTime;
@@ -56,6 +127,6 @@ public class AnswerButton : MonoBehaviour
             yield return null;
         }
 
-        group.alpha = 0;
+        group.alpha = 0f;
     }
 }
