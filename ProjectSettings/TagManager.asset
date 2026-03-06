@@ -5,8 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - IdentifyBee
-  - IdentifyWasp
+  - Head
   - IdentifyFly
+  - IdentifyWasp
+  - Body
+  - Legs
+  - Wings
   layers:
   - Default
   - TransparentFX
