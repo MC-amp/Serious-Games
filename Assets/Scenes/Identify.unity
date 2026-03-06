@@ -779,8 +779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.14, y: -0.0796}
-  m_SizeDelta: {x: 392.0967, y: 119.2082}
+  m_AnchoredPosition: {x: -19.14, y: -0.1942}
+  m_SizeDelta: {x: 392.0967, y: 194.8805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162758979
 MonoBehaviour:
@@ -3461,7 +3461,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click on the insects to the left to expand them into a larger view.
+  m_text: Click a small insect on the left to expand it into a larger view. Click
+    the large insect to bring back the small insects.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
   m_sharedMaterial: {fileID: 2741962919839006999, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
