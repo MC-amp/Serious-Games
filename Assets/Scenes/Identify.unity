@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 77588471}
   - component: {fileID: 77588470}
   - component: {fileID: 77588475}
+  - component: {fileID: 77588476}
   m_Layer: 5
   m_Name: HoverflySmall
   m_TagString: IdentifyFly
@@ -589,6 +590,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &77588476
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77588468}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &124209850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2273,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &307184146
 MonoBehaviour:
@@ -4244,6 +4257,7 @@ GameObject:
   - component: {fileID: 688668345}
   - component: {fileID: 688668344}
   - component: {fileID: 688668350}
+  - component: {fileID: 688668351}
   m_Layer: 5
   m_Name: ApisMelliferaSmall
   m_TagString: IdentifyBee
@@ -4510,6 +4524,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &688668351
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688668343}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &700925937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5678,6 +5704,7 @@ GameObject:
   - component: {fileID: 929234216}
   - component: {fileID: 929234215}
   - component: {fileID: 929234220}
+  - component: {fileID: 929234221}
   m_Layer: 5
   m_Name: CeratinaBifidiaSmall
   m_TagString: IdentifyBee
@@ -5944,6 +5971,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &929234221
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929234213}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &938443753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,6 +6976,7 @@ GameObject:
   - component: {fileID: 1117137283}
   - component: {fileID: 1117137282}
   - component: {fileID: 1117137287}
+  - component: {fileID: 1117137288}
   m_Layer: 5
   m_Name: MischocyttarusFlavitasisSmall
   m_TagString: IdentifyWasp
@@ -7203,6 +7243,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &1117137288
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117137280}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1131723678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,6 +7577,7 @@ GameObject:
   - component: {fileID: 1239978362}
   - component: {fileID: 1239978366}
   - component: {fileID: 1239978367}
+  - component: {fileID: 1239978368}
   m_Layer: 5
   m_Name: PseudomasarisVespoidesSmall
   m_TagString: IdentifyWasp
@@ -7791,6 +7844,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &1239978368
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239978360}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1246089576
 GameObject:
   m_ObjectHideFlags: 0
@@ -8515,8 +8580,8 @@ RectTransform:
   - {fileID: 892409381}
   - {fileID: 830502576}
   - {fileID: 1494193849}
-  - {fileID: 307184142}
   - {fileID: 953005603}
+  - {fileID: 307184142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9122,6 +9187,7 @@ GameObject:
   - component: {fileID: 1478401160}
   - component: {fileID: 1478401159}
   - component: {fileID: 1478401164}
+  - component: {fileID: 1478401165}
   m_Layer: 5
   m_Name: TrogusSmall
   m_TagString: IdentifyWasp
@@ -9388,6 +9454,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &1478401165
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478401157}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1494193848
 GameObject:
   m_ObjectHideFlags: 0
@@ -12083,6 +12161,7 @@ GameObject:
   - component: {fileID: 2091200505}
   - component: {fileID: 2091200504}
   - component: {fileID: 2091200509}
+  - component: {fileID: 2091200510}
   m_Layer: 5
   m_Name: GreenBottleFlySmall
   m_TagString: IdentifyFly
@@ -12349,6 +12428,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &2091200510
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091200502}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2091889071
 GameObject:
   m_ObjectHideFlags: 0
