@@ -28,6 +28,10 @@ public class AnswerButton : MonoBehaviour
     [Header("On Correct: FlyAway Selected Icon")]
     public bool flyAwayUsesAnimationEvent = true;
 
+    [Header("UI")]
+    public Animator listAnimator;
+    public string exitAnimationName = "Exit";
+
     private Button button;
 
     private const float LOCK_ANSWER_SECONDS = 2f;
@@ -77,22 +81,25 @@ public class AnswerButton : MonoBehaviour
     }
 
     IEnumerator CorrectFlowRoutine()
+{
+    yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
+
+    if (listAnimator != null)
+        listAnimator.Play(exitAnimationName);
+
+    if (insectsSmallParent != null)
+        insectsSmallParent.SetActive(true);
+
+    if (insectsLargeParent != null)
     {
-        yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
-
-        if (insectsSmallParent != null)
-            insectsSmallParent.SetActive(true);
-
-        if (insectsLargeParent != null)
-        {
-            for (int i = 0; i < insectsLargeParent.transform.childCount; i++)
-                insectsLargeParent.transform.GetChild(i).gameObject.SetActive(false);
-        }
-
-        yield return null;
-
-        FlyAwaySelectedIcon();
+        for (int i = 0; i < insectsLargeParent.transform.childCount; i++)
+            insectsLargeParent.transform.GetChild(i).gameObject.SetActive(false);
     }
+
+    yield return null;
+
+    FlyAwaySelectedIcon();
+}
 
     void FlyAwaySelectedIcon()
     {

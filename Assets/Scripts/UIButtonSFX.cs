@@ -11,9 +11,17 @@ public class UIButtonSFX : MonoBehaviour,
     public AudioClip hoverClip;
     public AudioClip clickClip;
 
+    [Header("Volume")]
+    [Range(0f, 2f)]
+    public float hoverVolume = 1f;
+
+    [Range(0f, 2f)]
+    public float clickVolume = 1f;
+
     [Header("Audio Settings")]
     [Range(0.5f, 1.5f)]
     public float hoverPitchMin = 0.95f;
+
     [Range(0.5f, 1.5f)]
     public float hoverPitchMax = 1.05f;
 
@@ -42,6 +50,7 @@ public class UIButtonSFX : MonoBehaviour,
             else
                 Debug.LogError("UIButtonSFX: UIAudio is missing");
         }
+
         if (button != null)
             button.onClick.AddListener(PlayClick);
 
@@ -75,7 +84,7 @@ public class UIButtonSFX : MonoBehaviour,
         lastHoverTime = Time.unscaledTime;
 
         uiAudioSource.pitch = Random.Range(hoverPitchMin, hoverPitchMax);
-        uiAudioSource.PlayOneShot(hoverClip);
+        uiAudioSource.PlayOneShot(hoverClip, hoverVolume);
         uiAudioSource.pitch = 1f;
     }
 
@@ -85,6 +94,6 @@ public class UIButtonSFX : MonoBehaviour,
             return;
 
         uiAudioSource.pitch = 1f;
-        uiAudioSource.PlayOneShot(clickClip);
+        uiAudioSource.PlayOneShot(clickClip, clickVolume);
     }
 }
