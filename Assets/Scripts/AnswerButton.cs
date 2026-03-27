@@ -32,6 +32,9 @@ public class AnswerButton : MonoBehaviour
     public Animator listAnimator;
     public string exitAnimationName = "Exit";
 
+    [Header("Rank System")]
+    public RankSystem rankSystem;
+
     private Button button;
 
     private const float LOCK_ANSWER_SECONDS = 2f;
@@ -49,36 +52,38 @@ public class AnswerButton : MonoBehaviour
     }
 
     void CheckAnswer()
+{
+    if (InsectSelectionManager.Instance == null)
+        return;
+
+    string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
+    if (string.IsNullOrEmpty(selectedTag))
+        return;
+
+    StopAllCoroutines();
+
+    bool isCorrect = (selectedTag == answerTag);
+
+    if (isCorrect)
     {
-        if (InsectSelectionManager.Instance == null)
-            return;
+        PlaySfx(correctClip);
 
-        string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
-        if (string.IsNullOrEmpty(selectedTag))
-            return;
+        if (rankSystem != null)
+            rankSystem.AddCorrectAnswer();
 
-        StopAllCoroutines();
+        if (correctGroup != null)
+            StartCoroutine(ShowAndFade(correctGroup));
 
-        bool isCorrect = (selectedTag == answerTag);
-
-        if (isCorrect)
-        {
-
-            PlaySfx(correctClip);
-
-            if (correctGroup != null)
-                StartCoroutine(ShowAndFade(correctGroup));
-
-            StartCoroutine(CorrectFlowRoutine());
-        }
-        else
-        {
-            PlaySfx(wrongClip);
-
-            if (wrongGroup != null)
-                StartCoroutine(ShowAndFade(wrongGroup));
-        }
+        StartCoroutine(CorrectFlowRoutine());
     }
+    else
+    {
+        PlaySfx(wrongClip);
+
+        if (wrongGroup != null)
+            StartCoroutine(ShowAndFade(wrongGroup));
+    }
+}
 
     IEnumerator CorrectFlowRoutine()
 {

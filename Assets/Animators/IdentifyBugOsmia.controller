@@ -184,11 +184,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 5771987673081435943, guid: a3d47cb47f15c86409d9d960d8a3f930, type: 3}
+      value: {fileID: -3113950705129196546, guid: ef39314911612ab4785519490461bdc5, type: 3}
     - time: 0.33333334
-      value: {fileID: -3044029875083375150, guid: 9fda05237d0dbba409c89f16e2469cb8, type: 3}
+      value: {fileID: -8814189923223350429, guid: 074f2cc05d87cb44291f7cb529cc883b, type: 3}
     - time: 1.1166667
-      value: {fileID: 5771987673081435943, guid: a3d47cb47f15c86409d9d960d8a3f930, type: 3}
+      value: {fileID: -3113950705129196546, guid: ef39314911612ab4785519490461bdc5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -238,9 +238,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 5771987673081435943, guid: a3d47cb47f15c86409d9d960d8a3f930, type: 3}
-    - {fileID: -3044029875083375150, guid: 9fda05237d0dbba409c89f16e2469cb8, type: 3}
-    - {fileID: 5771987673081435943, guid: a3d47cb47f15c86409d9d960d8a3f930, type: 3}
+    - {fileID: -3113950705129196546, guid: ef39314911612ab4785519490461bdc5, type: 3}
+    - {fileID: -8814189923223350429, guid: 074f2cc05d87cb44291f7cb529cc883b, type: 3}
+    - {fileID: -3113950705129196546, guid: ef39314911612ab4785519490461bdc5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -707,7 +707,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdentifyBugMisch
+  m_Name: IdentifyBugOsmia
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Normal
