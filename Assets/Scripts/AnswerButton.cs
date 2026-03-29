@@ -7,7 +7,7 @@ public class AnswerButton : MonoBehaviour
     [Header("Tags")]
     public string answerTag;
 
-    [Header("Right or Wrong")]
+    [Header("Right or Wröng")]
     public CanvasGroup correctGroup;
     public CanvasGroup wrongGroup;
 
@@ -20,7 +20,7 @@ public class AnswerButton : MonoBehaviour
 
     public GameObject insectsLargeParent;
 
-    [Header("SFX (optional)")]
+    [Header("SFX")]
     public AudioSource audioSource;
     public AudioClip correctClip;
     public AudioClip wrongClip;
@@ -50,6 +50,16 @@ public class AnswerButton : MonoBehaviour
         if (correctGroup != null) correctGroup.alpha = 0f;
         if (wrongGroup != null) wrongGroup.alpha = 0f;
     }
+
+    void TurnOffAllToggles()
+{
+    Toggle[] toggles = FindObjectsOfType<Toggle>(true);
+
+    foreach (Toggle toggle in toggles)
+    {
+        toggle.isOn = false;
+    }
+}
 
     void CheckAnswer()
 {
@@ -88,6 +98,8 @@ public class AnswerButton : MonoBehaviour
     IEnumerator CorrectFlowRoutine()
 {
     yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
+
+    TurnOffAllToggles();
 
     if (listAnimator != null)
         listAnimator.Play(exitAnimationName);
