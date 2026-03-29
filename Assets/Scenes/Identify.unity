@@ -6812,7 +6812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1101.54, y: -575}
+  m_AnchoredPosition: {x: -1125, y: -639}
   m_SizeDelta: {x: 303.96, y: 158.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &892409383
@@ -8491,7 +8491,7 @@ Transform:
   m_GameObject: {fileID: 997161810}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.1952763, w: 0.98074836}
-  m_LocalPosition: {x: 548, y: -488, z: 0}
+  m_LocalPosition: {x: 581, y: -507, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9328,7 +9328,7 @@ GameObject:
   - component: {fileID: 1161311344}
   - component: {fileID: 1161311343}
   m_Layer: 5
-  m_Name: Image
+  m_Name: StarBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12944,7 +12944,7 @@ Transform:
   m_GameObject: {fileID: 1518819092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.26129663, w: 0.96525854}
-  m_LocalPosition: {x: 1060, y: -322, z: 0}
+  m_LocalPosition: {x: 1067, y: -350, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
