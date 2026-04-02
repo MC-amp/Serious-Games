@@ -2877,9 +2877,7 @@ GameObject:
   - component: {fileID: 323418723}
   - component: {fileID: 323418722}
   - component: {fileID: 323418721}
-  - component: {fileID: 323418720}
   - component: {fileID: 323418719}
-  - component: {fileID: 323418718}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -2907,103 +2905,6 @@ RectTransform:
   m_AnchoredPosition: {x: -11.43, y: 1.564}
   m_SizeDelta: {x: 392.0967, y: 159.9977}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &323418718
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323418716}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.25
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &323418719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,32 +2924,6 @@ MonoBehaviour:
   hoverPitchMin: 0.95
   hoverPitchMax: 1.05
   hoverCooldown: 0.05
---- !u!114 &323418720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323418716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d595fc334da8a044fa8c62cd87f277ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
-  answerTag: IdentifyFly
-  correctGroup: {fileID: 1034353958}
-  wrongGroup: {fileID: 733501244}
-  visibleTime: 1
-  fadeDuration: 1
-  insectsSmallParent: {fileID: 700925937}
-  insectsLargeParent: {fileID: 830502575}
-  audioSource: {fileID: 0}
-  correctClip: {fileID: 8300000, guid: b58a14030e82dd9488156354df3058ec, type: 3}
-  wrongClip: {fileID: 8300000, guid: 3d5f061dab8b68c4ab9b8071e9e3e2bd, type: 3}
-  flyAwayUsesAnimationEvent: 1
-  listAnimator: {fileID: 0}
-  exitAnimationName: Exit
-  rankSystem: {fileID: 0}
 --- !u!95 &323418721
 Animator:
   serializedVersion: 7
@@ -11594,9 +11469,7 @@ GameObject:
   - component: {fileID: 1372629791}
   - component: {fileID: 1372629790}
   - component: {fileID: 1372629789}
-  - component: {fileID: 1372629788}
   - component: {fileID: 1372629787}
-  - component: {fileID: 1372629786}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -11624,103 +11497,6 @@ RectTransform:
   m_AnchoredPosition: {x: -13.58, y: -0.48}
   m_SizeDelta: {x: 392.0967, y: 181.6671}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &1372629786
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372629784}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.25
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1372629787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11740,32 +11516,6 @@ MonoBehaviour:
   hoverPitchMin: 0.95
   hoverPitchMax: 1.05
   hoverCooldown: 0.05
---- !u!114 &1372629788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372629784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d595fc334da8a044fa8c62cd87f277ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
-  answerTag: IdentifyFly
-  correctGroup: {fileID: 1034353958}
-  wrongGroup: {fileID: 733501244}
-  visibleTime: 1
-  fadeDuration: 1
-  insectsSmallParent: {fileID: 700925937}
-  insectsLargeParent: {fileID: 830502575}
-  audioSource: {fileID: 0}
-  correctClip: {fileID: 8300000, guid: b58a14030e82dd9488156354df3058ec, type: 3}
-  wrongClip: {fileID: 8300000, guid: 3d5f061dab8b68c4ab9b8071e9e3e2bd, type: 3}
-  flyAwayUsesAnimationEvent: 1
-  listAnimator: {fileID: 0}
-  exitAnimationName: Exit
-  rankSystem: {fileID: 0}
 --- !u!95 &1372629789
 Animator:
   serializedVersion: 7
