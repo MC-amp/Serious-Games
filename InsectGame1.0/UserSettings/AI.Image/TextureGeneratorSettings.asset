@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0355ba069dae4d24bf2e318d15442628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Image::Unity.AI.Image.Services.SessionPersistence.TextureGeneratorSettings
+  m_Session:
+    settings:
+      lastSelectedModels:
+        serializedData:
+        - key:
+            rid: 3934550803025494123
+          value:
+            rid: 3934550804451295232
+        - key:
+            rid: 3934550803025494125
+          value:
+            rid: 3934550804451295233
+        - key:
+            rid: 3934550803025494127
+          value:
+            rid: 3934550804451295234
+        - key:
+            rid: 3934550803025494129
+          value:
+            rid: 3934550804451295235
+        - key:
+            rid: 3934550803025494131
+          value:
+            rid: 3934550804451295236
+        - key:
+            rid: 3934550803025494133
+          value:
+            rid: 3934550804451295237
+        - key:
+            rid: 3934550803025494135
+          value:
+            rid: 3934550804451295238
+      previewSettings:
+        sizeFactor: 1.15
+  references:
+    version: 2
+    RefIds:
+    - rid: 3934550803025494123
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 0
+    - rid: 3934550803025494125
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 1
+    - rid: 3934550803025494127
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 2
+    - rid: 3934550803025494129
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 3
+    - rid: 3934550803025494131
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 4
+    - rid: 3934550803025494133
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Image
+        mode: 5
+    - rid: 3934550803025494135
+      type: {class: LastSelectedModelKey, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modality: Video
+        mode: 6
+    - rid: 3934550804451295232
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295233
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295234
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295235
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295236
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295237
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
+    - rid: 3934550804451295238
+      type: {class: ModelSelection, ns: Unity.AI.Image.Services.Stores.States, asm: Unity.AI.Image}
+      data:
+        modelID: 
