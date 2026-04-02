@@ -175,8 +175,8 @@ MonoBehaviour:
   centerDisplay: {fileID: 1037862355}
   leftPreview: {fileID: 1167853373}
   rightPreview: {fileID: 753630778}
-  leftButton: {fileID: 377672021}
-  rightButton: {fileID: 974976922}
+  leftButton: {fileID: 974976922}
+  rightButton: {fileID: 377672021}
   targetSlot: {fileID: 1719755477}
   partData:
     partType: 1
@@ -1037,8 +1037,8 @@ MonoBehaviour:
   centerDisplay: {fileID: 158011715}
   leftPreview: {fileID: 1493891696}
   rightPreview: {fileID: 1266443109}
-  leftButton: {fileID: 2092069211}
-  rightButton: {fileID: 1114393090}
+  leftButton: {fileID: 1114393090}
+  rightButton: {fileID: 2092069211}
   targetSlot: {fileID: 26706942}
   partData:
     partType: 3
@@ -1247,8 +1247,8 @@ MonoBehaviour:
   centerDisplay: {fileID: 255532369}
   leftPreview: {fileID: 235091640}
   rightPreview: {fileID: 1941485164}
-  leftButton: {fileID: 1067035597}
-  rightButton: {fileID: 127980350}
+  leftButton: {fileID: 127980350}
+  rightButton: {fileID: 1067035597}
   targetSlot: {fileID: 1243231607}
   partData:
     partType: 0
@@ -4886,8 +4886,8 @@ MonoBehaviour:
   centerDisplay: {fileID: 564403318}
   leftPreview: {fileID: 115207813}
   rightPreview: {fileID: 1160460778}
-  leftButton: {fileID: 1555166346}
-  rightButton: {fileID: 1699084170}
+  leftButton: {fileID: 1699084170}
+  rightButton: {fileID: 1555166346}
   targetSlot: {fileID: 698523809}
   partData:
     partType: 2
