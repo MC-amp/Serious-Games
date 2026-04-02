@@ -13336,7 +13336,7 @@ MonoBehaviour:
   - requiredCorrect: 3
     rankObject: {fileID: 1805027583}
     activationDelay: 3
-    activationSfx: {fileID: 8300000, guid: b58a14030e82dd9488156354df3058ec, type: 3}
+    activationSfx: {fileID: 8300000, guid: a0138c8a984e25f4282d0475d17be228, type: 3}
     hasActivated: 0
   - requiredCorrect: 4
     rankObject: {fileID: 1699256952}
@@ -13351,7 +13351,7 @@ MonoBehaviour:
   - requiredCorrect: 6
     rankObject: {fileID: 199976574}
     activationDelay: 3
-    activationSfx: {fileID: 8300000, guid: b58a14030e82dd9488156354df3058ec, type: 3}
+    activationSfx: {fileID: 8300000, guid: f0b027a9b88f7a14f872061dfc6085af, type: 3}
     hasActivated: 0
   - requiredCorrect: 7
     rankObject: {fileID: 337858144}
@@ -13366,7 +13366,7 @@ MonoBehaviour:
   - requiredCorrect: 9
     rankObject: {fileID: 2016473876}
     activationDelay: 3
-    activationSfx: {fileID: 8300000, guid: b58a14030e82dd9488156354df3058ec, type: 3}
+    activationSfx: {fileID: 8300000, guid: d6208bbc850170141b6b0ae91032eb37, type: 3}
     hasActivated: 0
   - requiredCorrect: 3
     rankObject: {fileID: 1268733639}
