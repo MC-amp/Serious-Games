@@ -70,6 +70,10 @@ public class SimpleSlideBook : MonoBehaviour
     public AudioClip pageTurnClip2;
     public AudioClip bookmarkClip;
 
+    [Header("Audio Volume")]
+    [Range(0f, 1f)]
+    public float bookVolume = 1f;
+
     private bool isOpen = false;
     private int pageIndex = 0;
 
@@ -102,7 +106,7 @@ public class SimpleSlideBook : MonoBehaviour
         if (bgImage != null) bgImage.raycastTarget = false;
         pageImage.raycastTarget = false;
 
-        LoadBookVolume();
+        ApplyBookVolume();
 
         if (openBookButton != null) openBookButton.onClick.AddListener(OpenBook);
         if (exitButton != null) exitButton.onClick.AddListener(CloseBook);
@@ -153,6 +157,11 @@ public class SimpleSlideBook : MonoBehaviour
         UpdateBookmarkVisualsByCurrentPage();
     }
 
+    void OnValidate()
+    {
+        ApplyBookVolume();
+    }
+
     void Update()
     {
         float targetX = isOpen ? openX : (openX - slideDistance);
@@ -164,14 +173,15 @@ public class SimpleSlideBook : MonoBehaviour
         );
     }
 
-    void LoadBookVolume()
+    void ApplyBookVolume()
     {
-        float bookVolume = PlayerPrefs.GetFloat("BookVolume", 1f);
+        float savedBookVolume = PlayerPrefs.GetFloat("BookVolume", 1f);
+        float finalVolume = Mathf.Clamp01(bookVolume * savedBookVolume);
 
-        if (openAudioSource != null) openAudioSource.volume = bookVolume;
-        if (closeAudioSource != null) closeAudioSource.volume = bookVolume;
-        if (pageSfxAudioSource != null) pageSfxAudioSource.volume = bookVolume;
-        if (bookmarkAudioSource != null) bookmarkAudioSource.volume = bookVolume;
+        if (openAudioSource != null) openAudioSource.volume = finalVolume;
+        if (closeAudioSource != null) closeAudioSource.volume = finalVolume;
+        if (pageSfxAudioSource != null) pageSfxAudioSource.volume = finalVolume;
+        if (bookmarkAudioSource != null) bookmarkAudioSource.volume = finalVolume;
     }
 
     void PlayOpenSound()
@@ -230,6 +240,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void OpenBook()
     {
+        ApplyBookVolume();
+
         isOpen = true;
 
         pageIndex = 0;
@@ -247,6 +259,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void CloseBook()
     {
+        ApplyBookVolume();
+
         isOpen = false;
 
         PlayCloseSound();
@@ -257,6 +271,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void NextPage()
     {
+        ApplyBookVolume();
+
         if (pageIndex < pages.Length - 1)
         {
             pageIndex++;
@@ -271,6 +287,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void BackPage()
     {
+        ApplyBookVolume();
+
         if (pageIndex > 0)
         {
             pageIndex--;
@@ -285,6 +303,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void GoToBookmark(int bookmarkIndex)
     {
+        ApplyBookVolume();
+
         if (bookmarkPages == null || bookmarkPages.Length != bookmarkButtons.Length)
         {
             Debug.LogError("SimpleSlideBook: bookmarkPages must be the same size as bookmarkButtons.");
@@ -309,6 +329,8 @@ public class SimpleSlideBook : MonoBehaviour
 
     void GoToPageFromLink(int linkIndex)
     {
+        ApplyBookVolume();
+
         if (pageLinkButtons == null || linkIndex < 0 || linkIndex >= pageLinkButtons.Length)
             return;
 
