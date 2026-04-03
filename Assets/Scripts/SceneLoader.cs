@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     [Header("Persistent UI")]
     public string persistentUISceneName = "PersistentUI";
 
-    [Header("Delay before löading (seconds)")]
+    [Header("Delay before loading (seconds)")]
     public float delaySeconds = 1f;
 
     private bool isLoading = false;
@@ -40,13 +40,18 @@ public class SceneLoader : MonoBehaviour
         if (delaySeconds > 0f)
             yield return new WaitForSecondsRealtime(delaySeconds);
 
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
         var loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        while (!loadOp.isDone) yield return null;
+        while (!loadOp.isDone)
+            yield return null;
 
         Scene newScene = SceneManager.GetSceneByName(sceneName);
         SceneManager.SetActiveScene(newScene);
 
         var toUnload = new List<Scene>();
+
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             var s = SceneManager.GetSceneAt(i);
@@ -61,7 +66,8 @@ public class SceneLoader : MonoBehaviour
         foreach (var s in toUnload)
         {
             var unloadOp = SceneManager.UnloadSceneAsync(s);
-            while (unloadOp != null && !unloadOp.isDone) yield return null;
+            while (unloadOp != null && !unloadOp.isDone)
+                yield return null;
         }
 
         isLoading = false;

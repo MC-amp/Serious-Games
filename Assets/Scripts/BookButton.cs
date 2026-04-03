@@ -16,12 +16,12 @@ public class SimpleSlideBook : MonoBehaviour
     public float slideSpeed = 8f;
 
     [Header("Images")]
-    public Image bgImage;          // optional
-    public Image pageImage;        // REQUIRED (your 'Page' object)
+    public Image bgImage;
+    public Image pageImage;
 
     [Header("Main Buttons")]
-    public Button openBookButton;  // outside panel
-    public Button exitButton;      // inside panel
+    public Button openBookButton;
+    public Button exitButton;
     public Button nextButton;
     public Button backButton;
 
@@ -30,44 +30,45 @@ public class SimpleSlideBook : MonoBehaviour
 
     [Header("Bookmarks (tabs)")]
     public Button[] bookmarkButtons = new Button[4];
-
-    [Tooltip("Which page each bookmark goes to (0 = first page). Must match bookmarkButtons size.")]
     public int[] bookmarkPages = new int[4];
 
-    [Tooltip("How far the selected bookmark sticks out (pixels).")]
     public float selectedBookmarkXOffset = 20f;
-
-    [Tooltip("Optional: make selected bookmark slightly bigger.")]
     public float selectedBookmarkScale = 1.05f;
 
-    [Header("Bookmark Section Ranges (auto-extend based on current page)")]
+    [Header("Bookmark Section Ranges")]
     public BookmarkSection[] bookmarkSections = new BookmarkSection[4];
 
     [Serializable]
     public class BookmarkSection
     {
-        public string name;        // optional label (Main/Bees/Flies/Wasps)
-        public int startPage;      // inclusive
-        public int endPage;        // inclusive
+        public string name;
+        public int startPage;
+        public int endPage;
     }
 
-    [Header("Page Link Buttons (show on certain pages AND jump to a page)")]
+    [Header("Page Link Buttons")]
     public PageLinkButton[] pageLinkButtons;
 
     [Serializable]
     public class PageLinkButton
     {
         public Button button;
-
-        [Tooltip("Pages this button appears on (0 = first page). Example: 0,2,5")]
         public int[] showOnPages;
-
-        [Tooltip("When clicked, jump to this page (0 = first page).")]
         public int goToPage;
     }
 
-    [Header("Debug")]
-    public bool logClicks = false;
+    [Header("Audio Sources")]
+    public AudioSource openAudioSource;
+    public AudioSource closeAudioSource;
+    public AudioSource pageSfxAudioSource;
+    public AudioSource bookmarkAudioSource;
+
+    [Header("Audio Clips")]
+    public AudioClip openClip;
+    public AudioClip closeClip;
+    public AudioClip pageTurnClip1;
+    public AudioClip pageTurnClip2;
+    public AudioClip bookmarkClip;
 
     private bool isOpen = false;
     private int pageIndex = 0;
@@ -77,7 +78,6 @@ public class SimpleSlideBook : MonoBehaviour
 
     void Start()
     {
-        // ---------- VALIDATION ----------
         if (panel == null)
         {
             Debug.LogError("SimpleSlideBook: panel is not assigned.");
@@ -87,29 +87,28 @@ public class SimpleSlideBook : MonoBehaviour
 
         if (pageImage == null)
         {
-            Debug.LogError("SimpleSlideBook: pageImage is not assigned (drag your Page Image here).");
+            Debug.LogError("SimpleSlideBook: pageImage is not assigned.");
             enabled = false;
             return;
         }
 
         if (pages == null || pages.Length == 0)
         {
-            Debug.LogError("SimpleSlideBook: pages[] is empty. Add page sprites in inspector.");
+            Debug.LogError("SimpleSlideBook: pages[] is empty.");
             enabled = false;
             return;
         }
 
-        // Prevent BG/Page from blocking clicks
         if (bgImage != null) bgImage.raycastTarget = false;
         pageImage.raycastTarget = false;
 
-        // Hook main buttons
+        LoadBookVolume();
+
         if (openBookButton != null) openBookButton.onClick.AddListener(OpenBook);
         if (exitButton != null) exitButton.onClick.AddListener(CloseBook);
         if (nextButton != null) nextButton.onClick.AddListener(NextPage);
         if (backButton != null) backButton.onClick.AddListener(BackPage);
 
-        // Hook bookmarks + store base positions/scales
         bookmarkBasePositions = new Vector2[bookmarkButtons.Length];
         bookmarkBaseScales = new Vector3[bookmarkButtons.Length];
 
@@ -130,7 +129,6 @@ public class SimpleSlideBook : MonoBehaviour
             }
         }
 
-        // Hook page link buttons
         if (pageLinkButtons != null && pageLinkButtons.Length > 0)
         {
             for (int i = 0; i < pageLinkButtons.Length; i++)
@@ -144,17 +142,15 @@ public class SimpleSlideBook : MonoBehaviour
             }
         }
 
-        // Start CLOSED
         panel.anchoredPosition = new Vector2(openX - slideDistance, panel.anchoredPosition.y);
         isOpen = false;
 
-        // Start on page 0
         pageIndex = 0;
         SetPage(pageIndex);
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW
+        UpdateBookmarkVisualsByCurrentPage();
     }
 
     void Update()
@@ -168,6 +164,70 @@ public class SimpleSlideBook : MonoBehaviour
         );
     }
 
+    void LoadBookVolume()
+    {
+        float bookVolume = PlayerPrefs.GetFloat("BookVolume", 1f);
+
+        if (openAudioSource != null) openAudioSource.volume = bookVolume;
+        if (closeAudioSource != null) closeAudioSource.volume = bookVolume;
+        if (pageSfxAudioSource != null) pageSfxAudioSource.volume = bookVolume;
+        if (bookmarkAudioSource != null) bookmarkAudioSource.volume = bookVolume;
+    }
+
+    void PlayOpenSound()
+    {
+        if (openAudioSource == null || openClip == null) return;
+        if (openAudioSource.isPlaying) return;
+
+        openAudioSource.clip = openClip;
+        openAudioSource.Play();
+    }
+
+    void PlayCloseSound()
+    {
+        if (closeAudioSource == null || closeClip == null) return;
+        if (closeAudioSource.isPlaying) return;
+
+        closeAudioSource.clip = closeClip;
+        closeAudioSource.Play();
+    }
+
+    void PlayPageTurnSound()
+    {
+        if (pageSfxAudioSource == null) return;
+        if (pageSfxAudioSource.isPlaying) return;
+
+        AudioClip clipToPlay = null;
+
+        if (pageTurnClip1 != null && pageTurnClip2 != null)
+        {
+            clipToPlay = UnityEngine.Random.value < 0.5f ? pageTurnClip1 : pageTurnClip2;
+        }
+        else if (pageTurnClip1 != null)
+        {
+            clipToPlay = pageTurnClip1;
+        }
+        else if (pageTurnClip2 != null)
+        {
+            clipToPlay = pageTurnClip2;
+        }
+
+        if (clipToPlay != null)
+        {
+            pageSfxAudioSource.clip = clipToPlay;
+            pageSfxAudioSource.Play();
+        }
+    }
+
+    void PlayBookmarkSound()
+    {
+        if (bookmarkAudioSource == null || bookmarkClip == null) return;
+        if (bookmarkAudioSource.isPlaying) return;
+
+        bookmarkAudioSource.clip = bookmarkClip;
+        bookmarkAudioSource.Play();
+    }
+
     void OpenBook()
     {
         isOpen = true;
@@ -177,7 +237,9 @@ public class SimpleSlideBook : MonoBehaviour
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW
+        UpdateBookmarkVisualsByCurrentPage();
+
+        PlayOpenSound();
 
         if (openBookButton != null)
             openBookButton.interactable = false;
@@ -186,6 +248,8 @@ public class SimpleSlideBook : MonoBehaviour
     void CloseBook()
     {
         isOpen = false;
+
+        PlayCloseSound();
 
         if (openBookButton != null)
             openBookButton.interactable = true;
@@ -197,11 +261,12 @@ public class SimpleSlideBook : MonoBehaviour
         {
             pageIndex++;
             SetPage(pageIndex);
+            PlayPageTurnSound();
         }
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW
+        UpdateBookmarkVisualsByCurrentPage();
     }
 
     void BackPage()
@@ -210,11 +275,12 @@ public class SimpleSlideBook : MonoBehaviour
         {
             pageIndex--;
             SetPage(pageIndex);
+            PlayPageTurnSound();
         }
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW
+        UpdateBookmarkVisualsByCurrentPage();
     }
 
     void GoToBookmark(int bookmarkIndex)
@@ -227,15 +293,18 @@ public class SimpleSlideBook : MonoBehaviour
 
         int targetPage = ClampPage(bookmarkPages[bookmarkIndex]);
 
-        if (logClicks)
-            Debug.Log("Bookmark click: " + bookmarkIndex + " -> page " + targetPage);
+        PlayBookmarkSound();
 
-        pageIndex = targetPage;
-        SetPage(pageIndex);
+        if (pageIndex != targetPage)
+        {
+            pageIndex = targetPage;
+            SetPage(pageIndex);
+            PlayPageTurnSound();
+        }
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW (don’t “lock” to clicked bookmark)
+        UpdateBookmarkVisualsByCurrentPage();
     }
 
     void GoToPageFromLink(int linkIndex)
@@ -245,15 +314,16 @@ public class SimpleSlideBook : MonoBehaviour
 
         int targetPage = ClampPage(pageLinkButtons[linkIndex].goToPage);
 
-        if (logClicks)
-            Debug.Log("PageLink click: " + linkIndex + " -> page " + targetPage);
-
-        pageIndex = targetPage;
-        SetPage(pageIndex);
+        if (pageIndex != targetPage)
+        {
+            pageIndex = targetPage;
+            SetPage(pageIndex);
+            PlayPageTurnSound();
+        }
 
         UpdateNavButtons();
         UpdatePageLinkButtons();
-        UpdateBookmarkVisualsByCurrentPage(); // <-- NEW
+        UpdateBookmarkVisualsByCurrentPage();
     }
 
     int ClampPage(int p)
@@ -281,7 +351,6 @@ public class SimpleSlideBook : MonoBehaviour
             nextButton.interactable = (pageIndex < pages.Length - 1);
     }
 
-    // ---------- NEW: pick the bookmark based on current page ----------
     void UpdateBookmarkVisualsByCurrentPage()
     {
         int selectedBookmark = GetBookmarkIndexForPage(pageIndex);
@@ -302,10 +371,9 @@ public class SimpleSlideBook : MonoBehaviour
                 return i;
         }
 
-        return -1; // none matched
+        return -1;
     }
 
-    // Restores exact bookmark positions/scales, then pops selected
     void UpdateBookmarkVisuals(int selectedIndex)
     {
         for (int i = 0; i < bookmarkButtons.Length; i++)
@@ -316,7 +384,6 @@ public class SimpleSlideBook : MonoBehaviour
             RectTransform rt = btn.GetComponent<RectTransform>();
             if (rt == null) continue;
 
-            // Restore original placement (prevents drifting)
             rt.anchoredPosition = bookmarkBasePositions[i];
             rt.localScale = bookmarkBaseScales[i];
 
@@ -324,8 +391,6 @@ public class SimpleSlideBook : MonoBehaviour
             {
                 rt.anchoredPosition = bookmarkBasePositions[i] + new Vector2(selectedBookmarkXOffset, 0f);
                 rt.localScale = bookmarkBaseScales[i] * selectedBookmarkScale;
-
-                // Selected draws above other bookmarks
                 rt.SetAsLastSibling();
             }
         }
