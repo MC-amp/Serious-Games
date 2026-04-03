@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ReturnToMenuButton : MonoBehaviour
+public class ReturnToMenu : MonoBehaviour
 {
-    public string menuSceneName = "MainMenu";
+    public string mainMenuSceneName = "MainMenu";
 
-    public void ReturnToMenu()
+    public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(menuSceneName);
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }

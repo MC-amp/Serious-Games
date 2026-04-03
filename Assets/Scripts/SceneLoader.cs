@@ -1,15 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
-    public void LoadSceneByName(string sceneName)
+
+    [Header("Persistent UI")]
+    public string persistentUISceneName = "PersistentUI";
+
+    [Header("Delay before loading (seconds)")]
+    public float delaySeconds = 1f;
+
+    private bool isLoading = false;
+
+    private void Awake()
     {
-        SceneManager.LoadScene(sceneName);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
-    public void LoadSceneByIndex(int index)
+
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(index);
+        if (!isLoading)
+            StartCoroutine(LoadSceneRoutine(sceneName));
+    }
+
+    private IEnumerator LoadSceneRoutine(string sceneName)
+    {
+        isLoading = true;
+
+        if (delaySeconds > 0f)
+            yield return new WaitForSecondsRealtime(delaySeconds);
+
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
+        var loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        while (!loadOp.isDone)
+            yield return null;
+
+        Scene newScene = SceneManager.GetSceneByName(sceneName);
+        SceneManager.SetActiveScene(newScene);
+
+        var toUnload = new List<Scene>();
+
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            var s = SceneManager.GetSceneAt(i);
+            if (!s.isLoaded) continue;
+
+            if (s.name == persistentUISceneName) continue;
+            if (s.name == sceneName) continue;
+
+            toUnload.Add(s);
+        }
+
+        foreach (var s in toUnload)
+        {
+            var unloadOp = SceneManager.UnloadSceneAsync(s);
+            while (unloadOp != null && !unloadOp.isDone)
+                yield return null;
+        }
+
+        isLoading = false;
     }
 }
