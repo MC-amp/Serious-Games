@@ -3648,6 +3648,7 @@ GameObject:
   - component: {fileID: 317713660}
   - component: {fileID: 317713659}
   - component: {fileID: 317713663}
+  - component: {fileID: 317713664}
   m_Layer: 5
   m_Name: CeratinaBifidiaLarge
   m_TagString: Untagged
@@ -3781,10 +3782,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 317713664}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3843,6 +3844,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &317713664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317713657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &323152909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,6 +4800,7 @@ GameObject:
   - component: {fileID: 362216922}
   - component: {fileID: 362216921}
   - component: {fileID: 362216925}
+  - component: {fileID: 362216926}
   m_Layer: 5
   m_Name: ApisMelliferaLarge
   m_TagString: Untagged
@@ -4919,10 +4934,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 362216926}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4981,6 +4996,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &362216926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362216919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &375771405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,6 +6611,7 @@ GameObject:
   - component: {fileID: 535531912}
   - component: {fileID: 535531911}
   - component: {fileID: 535531915}
+  - component: {fileID: 535531916}
   m_Layer: 5
   m_Name: HoverflyLarge
   m_TagString: Untagged
@@ -6716,10 +6745,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 535531916}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6778,6 +6807,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &535531916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535531909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &547691534
 GameObject:
   m_ObjectHideFlags: 0
@@ -9279,6 +9321,7 @@ GameObject:
   - component: {fileID: 871979447}
   - component: {fileID: 871979446}
   - component: {fileID: 871979450}
+  - component: {fileID: 871979451}
   m_Layer: 5
   m_Name: OsmiaBicor
   m_TagString: Untagged
@@ -9412,10 +9455,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 871979451}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9474,6 +9517,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &871979451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871979444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &874650728
 GameObject:
   m_ObjectHideFlags: 0
@@ -9802,6 +9858,7 @@ GameObject:
   - component: {fileID: 893597362}
   - component: {fileID: 893597361}
   - component: {fileID: 893597365}
+  - component: {fileID: 893597366}
   m_Layer: 5
   m_Name: EristalisTenax
   m_TagString: Untagged
@@ -9935,10 +9992,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 893597366}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9997,6 +10054,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &893597366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893597359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &896367725
 GameObject:
   m_ObjectHideFlags: 0
@@ -10846,6 +10916,7 @@ GameObject:
   - component: {fileID: 938443756}
   - component: {fileID: 938443755}
   - component: {fileID: 938443759}
+  - component: {fileID: 938443760}
   m_Layer: 5
   m_Name: MischocyttarusFlavitasis
   m_TagString: Untagged
@@ -10979,10 +11050,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 938443760}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11041,6 +11112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &938443760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938443753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &948962676
 GameObject:
   m_ObjectHideFlags: 0
@@ -13745,6 +13829,7 @@ GameObject:
   - component: {fileID: 1246089579}
   - component: {fileID: 1246089578}
   - component: {fileID: 1246089582}
+  - component: {fileID: 1246089583}
   m_Layer: 5
   m_Name: TrogusLarge
   m_TagString: Untagged
@@ -13878,10 +13963,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1246089583}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13940,6 +14025,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &1246089583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246089576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &1257900140
 GameObject:
   m_ObjectHideFlags: 0
@@ -14505,6 +14603,7 @@ GameObject:
   - component: {fileID: 1285877285}
   - component: {fileID: 1285877288}
   - component: {fileID: 1285877289}
+  - component: {fileID: 1285877290}
   m_Layer: 5
   m_Name: PseudomasarisLarge
   m_TagString: Untagged
@@ -14623,10 +14722,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1285877290}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14700,6 +14799,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &1285877290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285877283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &1316765752
 GameObject:
   m_ObjectHideFlags: 0
@@ -19033,6 +19145,7 @@ GameObject:
   - component: {fileID: 1733173568}
   - component: {fileID: 1733173567}
   - component: {fileID: 1733173571}
+  - component: {fileID: 1733173572}
   m_Layer: 5
   m_Name: BottleFlyLarge
   m_TagString: Untagged
@@ -19166,10 +19279,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1316765752}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1733173572}
+        m_TargetAssemblyTypeName: DisableChildren, Assembly-CSharp
+        m_MethodName: DisableAllChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19228,6 +19341,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
+--- !u!114 &1733173572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733173565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a55646c129b974599d73d20febb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableChildren
+  parentObject: {fileID: 830502575}
 --- !u!1 &1738766088
 GameObject:
   m_ObjectHideFlags: 0
