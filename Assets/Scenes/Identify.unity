@@ -1061,7 +1061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 306459906785683224, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: 349764305286782800, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_Layer
@@ -1257,7 +1257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073115062934448111, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: bookVolume
-      value: 0.5
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: 7073115062934448111, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: slideDistance
