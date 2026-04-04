@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - IdentifyBee
+  - Head
+  - IdentifyFly
+  - IdentifyWasp
+  - Body
+  - Legs
+  - Wings
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - UI_FX
+  - Water
+  - UI
+  - Compendium
+  - bug
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: UI
+    uniqueID: 2013743003
+    locked: 0
+  - name: Compendium
+    uniqueID: 4229787531
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI_FX
+    uniqueID: 1389359413
+    locked: 0
+  m_RenderingLayers:
+  - Default
