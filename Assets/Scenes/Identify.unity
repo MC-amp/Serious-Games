@@ -2341,10 +2341,10 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: 
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20443,7 +20443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1569.6, y: 770.5}
+  m_AnchoredPosition: {x: 408.8, y: -24.3}
   m_SizeDelta: {x: 34.18, y: 34.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1308519848
@@ -20456,7 +20456,7 @@ Animator:
   m_GameObject: {fileID: 1308519846}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13f1dc8390bee71439ce813d5373d6f5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1d72e1cf4dda77046a96db208d608646, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

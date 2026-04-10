@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class WanderingUIButton : MonoBehaviour
 {
-    [Header("Boundary")]
+    [Header("Böundary")]
     public UIBoundaryPolygon boundaryPolygon;
 
     [Header("Movement")]
@@ -172,7 +172,6 @@ public class WanderingUIButton : MonoBehaviour
         {
             dartTimer = Random.Range(dartDurationMin, dartDurationMax);
 
-            // Darts feel better if the bug commits to a fresh heading.
             PickRandomDirection();
             ResetDirectionTimer();
         }
@@ -245,7 +244,6 @@ public class WanderingUIButton : MonoBehaviour
         if (direction.sqrMagnitude < 0.001f)
             direction = Random.insideUnitCircle.normalized;
 
-        // Cancel pause on a bounce so bugs do not get stuck looking awkward at walls.
         pauseTimer = 0f;
 
         ResetDirectionTimer();
