@@ -81,6 +81,9 @@ public class AnswerButton : MonoBehaviour
         if (rankSystem != null)
             rankSystem.AddCorrectAnswer();
 
+        if (GlobalProgressManager.Instance != null)
+        GlobalProgressManager.Instance.AddIdentifyCorrect();
+
         if (correctGroup != null)
             StartCoroutine(ShowAndFade(correctGroup));
 

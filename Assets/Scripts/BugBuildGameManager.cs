@@ -121,6 +121,9 @@ public class BugBuildGameManager : MonoBehaviour
         starsEarned++;
         UpdateStarDisplay();
 
+        if (GlobalProgressManager.Instance != null)
+        GlobalProgressManager.Instance.AddBuildABugCorrect();
+
         yield return new WaitForSeconds(correctResultDuration);
 
         headWheel.RemovePart(usedHead);
