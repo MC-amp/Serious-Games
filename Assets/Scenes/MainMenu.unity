@@ -1132,7 +1132,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2011859083}
-  - {fileID: 1436043510}
   - {fileID: 859629125}
   - {fileID: 673721887}
   - {fileID: 587343280}
@@ -1143,7 +1142,6 @@ RectTransform:
   - {fileID: 635188915}
   - {fileID: 1709177410}
   - {fileID: 1181579324}
-  - {fileID: 688797453}
   - {fileID: 416241232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1562,11 +1560,11 @@ Transform:
   m_GameObject: {fileID: 688797451}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -5.56, z: -9928.243}
-  m_LocalScale: {x: 134.81451, y: 136.39294, z: 110.31381}
+  m_LocalPosition: {x: -0.00083333335, y: -0.038611114, z: 21.053864}
+  m_LocalScale: {x: 0.936212, y: 0.9471733, z: 0.7660682}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 630662336}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711368520
 GameObject:
@@ -2480,7 +2478,7 @@ GameObject:
   - component: {fileID: 1436043510}
   - component: {fileID: 1436043512}
   - component: {fileID: 1436043511}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2496,11 +2494,11 @@ Transform:
   m_GameObject: {fileID: 1436043509}
   serializedVersion: 2
   m_LocalRotation: {x: -0.39498463, y: 0.58650416, z: -0.5865043, w: 0.39498463}
-  m_LocalPosition: {x: -1675, y: 713, z: -12960}
+  m_LocalPosition: {x: -11.631946, y: 4.9513893, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 630662336}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 22.083, y: 90, z: -90}
 --- !u!199 &1436043511
 ParticleSystemRenderer:
@@ -2554,7 +2552,7 @@ ParticleSystemRenderer:
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
-  m_SortMode: 0
+  m_SortMode: 1
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
@@ -2599,7 +2597,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9487,6 +9485,8 @@ SceneRoots:
   - {fileID: 1600003024}
   - {fileID: 1903424981}
   - {fileID: 472669758}
+  - {fileID: 688797453}
+  - {fileID: 1436043510}
   - {fileID: 630662336}
   - {fileID: 1783734619}
   - {fileID: 405803207}
