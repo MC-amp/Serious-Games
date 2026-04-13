@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fdb820c20f083454a99186725118d116
+guid: 84cc603ce5b942f4f9b1885f921ea800
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8814189923223350429
-    second: osmiaBicornis2_0
+      213: -5204301408309997111
+    second: Paperwasp- FINAL2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: osmiaBicornis2_0
+      name: Paperwasp- FINAL2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 648
-        height: 809
+        x: 10
+        y: 95
+        width: 950
+        height: 965
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 363d173e6f4bda580800000000000000
-      internalID: -8814189923223350429
+      spriteID: 9c11e95517b96c7b0800000000000000
+      internalID: -5204301408309997111
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      osmiaBicornis2_0: -8814189923223350429
+      Paperwasp- FINAL2_0: -5204301408309997111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

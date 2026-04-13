@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c05a0647f3341fd4ea79e77a4f319861
+guid: 4faff5e206e436546941190cce8fbd19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -624606940547012572
-    second: Trogus_pennator2_0
+      213: 3146534109003264416
+    second: Trogus_pennator_Full2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trogus_pennator2_0
+      name: Trogus_pennator_Full2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 23
-        width: 955
-        height: 1044
+        y: 9
+        width: 953
+        height: 1071
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 428a3700c43f457f0800000000000000
-      internalID: -624606940547012572
+      spriteID: 0a13ac0e91cbaab20800000000000000
+      internalID: 3146534109003264416
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Trogus_pennator2_0: -624606940547012572
+      Trogus_pennator_Full2_0: 3146534109003264416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fdb820c20f083454a99186725118d116
+guid: 75db22c2fee8f3048b589f828661c299
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8814189923223350429
-    second: osmiaBicornis2_0
+      213: 3803179436396130303
+    second: ceratinaBifida_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: osmiaBicornis2_0
+      name: ceratinaBifida_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 648
-        height: 809
+        width: 622
+        height: 876
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 363d173e6f4bda580800000000000000
-      internalID: -8814189923223350429
+      spriteID: fff267b1c8b97c430800000000000000
+      internalID: 3803179436396130303
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      osmiaBicornis2_0: -8814189923223350429
+      ceratinaBifida_0: 3803179436396130303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdb820c20f083454a99186725118d116
+guid: 074f2cc05d87cb44291f7cb529cc883b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -116,10 +116,10 @@ TextureImporter:
       name: osmiaBicornis2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 648
-        height: 809
+        x: 4
+        y: 28
+        width: 694
+        height: 811
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

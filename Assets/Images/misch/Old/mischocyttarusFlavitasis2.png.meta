@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fdb820c20f083454a99186725118d116
+guid: 9fda05237d0dbba409c89f16e2469cb8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8814189923223350429
-    second: osmiaBicornis2_0
+      213: -3044029875083375150
+    second: mischocyttarusFlavitasis2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: osmiaBicornis2_0
+      name: mischocyttarusFlavitasis2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 648
-        height: 809
+        x: 39
+        y: 93
+        width: 911
+        height: 931
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 363d173e6f4bda580800000000000000
-      internalID: -8814189923223350429
+      spriteID: 2dd8af1e4fe61c5d0800000000000000
+      internalID: -3044029875083375150
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      osmiaBicornis2_0: -8814189923223350429
+      mischocyttarusFlavitasis2_0: -3044029875083375150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
