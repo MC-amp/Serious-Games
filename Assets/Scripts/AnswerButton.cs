@@ -17,7 +17,6 @@ public class AnswerButton : MonoBehaviour
 
     [Header("Scene References")]
     public GameObject insectsSmallParent;
-
     public GameObject insectsLargeParent;
 
     [Header("SFX")]
@@ -52,74 +51,81 @@ public class AnswerButton : MonoBehaviour
     }
 
     void TurnOffAllToggles()
-{
-    Toggle[] toggles = FindObjectsOfType<Toggle>(true);
-
-    foreach (Toggle toggle in toggles)
     {
-        toggle.isOn = false;
+        Toggle[] toggles = FindObjectsOfType<Toggle>(true);
+
+        foreach (Toggle toggle in toggles)
+        {
+            toggle.isOn = false;
+        }
     }
-}
 
     void CheckAnswer()
-{
-    if (InsectSelectionManager.Instance == null)
-        return;
-
-    string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
-    if (string.IsNullOrEmpty(selectedTag))
-        return;
-
-    StopAllCoroutines();
-
-    bool isCorrect = (selectedTag == answerTag);
-
-    if (isCorrect)
     {
-        PlaySfx(correctClip);
+        if (InsectSelectionManager.Instance == null)
+            return;
 
-        if (rankSystem != null)
-            rankSystem.AddCorrectAnswer();
+        string selectedTag = InsectSelectionManager.Instance.GetSelectedTag();
+        if (string.IsNullOrEmpty(selectedTag))
+            return;
 
-        if (GlobalProgressManager.Instance != null)
-        GlobalProgressManager.Instance.AddIdentifyCorrect();
+        StopAllCoroutines();
 
-        if (correctGroup != null)
-            StartCoroutine(ShowAndFade(correctGroup));
+        bool isCorrect = (selectedTag == answerTag);
 
-        StartCoroutine(CorrectFlowRoutine());
+        if (isCorrect)
+        {
+            PlaySfx(correctClip);
+
+            GameObject selected = InsectSelectionManager.Instance.currentlySelected;
+            if (selected != null)
+            {
+                IdentifyBugState bugState = selected.GetComponent<IdentifyBugState>();
+                if (bugState != null)
+                {
+                    bugState.MarkSolved();
+                }
+            }
+
+            if (rankSystem != null)
+                rankSystem.AddCorrectAnswer();
+
+            if (correctGroup != null)
+                StartCoroutine(ShowAndFade(correctGroup));
+
+            StartCoroutine(CorrectFlowRoutine());
+        }
+        else
+        {
+            PlaySfx(wrongClip);
+
+            if (wrongGroup != null)
+                StartCoroutine(ShowAndFade(wrongGroup));
+        }
     }
-    else
-    {
-        PlaySfx(wrongClip);
-
-        if (wrongGroup != null)
-            StartCoroutine(ShowAndFade(wrongGroup));
-    }
-}
 
     IEnumerator CorrectFlowRoutine()
-{
-    yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
-
-    TurnOffAllToggles();
-
-    if (listAnimator != null)
-        listAnimator.Play(exitAnimationName);
-
-    if (insectsSmallParent != null)
-        insectsSmallParent.SetActive(true);
-
-    if (insectsLargeParent != null)
     {
-        for (int i = 0; i < insectsLargeParent.transform.childCount; i++)
-            insectsLargeParent.transform.GetChild(i).gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(LOCK_ANSWER_SECONDS);
+
+        TurnOffAllToggles();
+
+        if (listAnimator != null)
+            listAnimator.Play(exitAnimationName);
+
+        if (insectsSmallParent != null)
+            insectsSmallParent.SetActive(true);
+
+        if (insectsLargeParent != null)
+        {
+            for (int i = 0; i < insectsLargeParent.transform.childCount; i++)
+                insectsLargeParent.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        yield return null;
+
+        FlyAwaySelectedIcon();
     }
-
-    yield return null;
-
-    FlyAwaySelectedIcon();
-}
 
     void FlyAwaySelectedIcon()
     {

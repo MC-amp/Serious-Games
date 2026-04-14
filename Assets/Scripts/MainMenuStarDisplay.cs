@@ -16,9 +16,15 @@ public class MainMenuStarDisplay : MonoBehaviour
     [Header("Build-A-Bug Stars")]
     public List<StarThreshold> buildABugStars = new List<StarThreshold>();
 
-    private void Start()
+    private void OnEnable()
     {
+        GlobalProgressManager.OnProgressChanged += RefreshDisplay;
         RefreshDisplay();
+    }
+
+    private void OnDisable()
+    {
+        GlobalProgressManager.OnProgressChanged -= RefreshDisplay;
     }
 
     public void RefreshDisplay()

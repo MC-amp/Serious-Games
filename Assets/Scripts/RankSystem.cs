@@ -7,7 +7,7 @@ public class RankSystem : MonoBehaviour
     [System.Serializable]
     public class RankEntry
     {
-        [Tooltip("Höw many correct bugs are needed to unlock this rank.")]
+        [Tooltip("HÃ¶w many correct bugs are needed to unlock this rank.")]
         public int requiredCorrect = 1;
 
         [Tooltip("The object that turns on when this rank is reached.")]
@@ -35,13 +35,14 @@ public class RankSystem : MonoBehaviour
 
     private void Start()
     {
-        foreach (var rank in ranks)
-        {
-            if (rank.rankObject != null)
-                rank.rankObject.SetActive(false);
+        ResetVisualState();
 
-            rank.hasActivated = false;
+        if (GlobalProgressManager.Instance != null)
+        {
+            correctSolvedCount = GlobalProgressManager.Instance.IdentifyCorrectCount;
         }
+
+        CheckRanks();
     }
 
     public void AddCorrectAnswer()
@@ -53,7 +54,11 @@ public class RankSystem : MonoBehaviour
     public void ResetRanks()
     {
         correctSolvedCount = 0;
+        ResetVisualState();
+    }
 
+    private void ResetVisualState()
+    {
         foreach (var rank in ranks)
         {
             rank.hasActivated = false;
