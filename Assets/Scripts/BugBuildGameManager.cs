@@ -27,6 +27,10 @@ public class BugBuildGameManager : MonoBehaviour
     public Image starDisplay;
     public List<Sprite> starSprites;
     private int starsEarned = 0;
+    //BaB= Build a Bug,IDI= insect id 
+    public GameObject BaBWon;
+    public bool IsBaBWon = false;
+    public GameObject BaBIDIWon;
 
     [Header("Result Timing")]
     public float wrongResultDuration = 2f;
@@ -245,6 +249,15 @@ public class BugBuildGameManager : MonoBehaviour
     private void UpdateStarDisplay()
     {
         if (starDisplay == null || starSprites == null || starSprites.Count == 0) return;
+        //is all stars are earned then show the win screen
+        Debug.Log(IsBaBWon);
+        Debug.Log(starsEarned);
+        if (starsEarned == 9)
+        {
+            IsBaBWon = true;
+            Debug.Log(IsBaBWon);
+            //BaBWin.SetActive(true);
+        }
 
         int index = Mathf.Clamp(starsEarned, 0, starSprites.Count - 1);
         starDisplay.sprite = starSprites[index];
