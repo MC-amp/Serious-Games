@@ -7880,7 +7880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUG ID GAME TITLE
+  m_text: INSECT INSPECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
   m_sharedMaterial: {fileID: 2741962919839006999, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}

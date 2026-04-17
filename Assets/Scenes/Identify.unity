@@ -12344,8 +12344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.85526, y: -1.0133}
-  m_SizeDelta: {x: 25743, y: 9093.3}
+  m_AnchoredPosition: {x: 42.25, y: -1.0133}
+  m_SizeDelta: {x: 29963.59, y: 9093.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605860954
 MonoBehaviour:
@@ -24980,8 +24980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: -16}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 41.820007, y: -16}
+  m_SizeDelta: {x: 63.64, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257900142
 MonoBehaviour:
@@ -25003,7 +25003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If you are unsure of an insects traits be sure to check the compendium!
+  m_text: If you are unsure of an insect's traits, be sure to check the compendium!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
   m_sharedMaterial: {fileID: 2741962919839006999, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
@@ -28321,7 +28321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The three graphs on the right will show you the likelihood of an insects
+  m_text: The three graphs on the right will show you the likelihood of an insect's
     species depending on the selected traits.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
@@ -28901,8 +28901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The more correct answers you get the higher your rank becomes.  Go for
-    gold!
+  m_text: Identify insects correctly to increase your rank. Go for gold!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
   m_sharedMaterial: {fileID: 2741962919839006999, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
@@ -32111,7 +32110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 233.5, y: -67.8}
+  m_AnchoredPosition: {x: 283, y: -67.8}
   m_SizeDelta: {x: 34.18, y: 34.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1605897945
