@@ -7,6 +7,8 @@ public class UIButtonSFX : MonoBehaviour,
     IPointerEnterHandler,
     ISelectHandler
 {
+    public static bool suppressSfx = false;
+    
     [Header("Audio Clips")]
     public AudioClip hoverClip;
     public AudioClip clickClip;
@@ -74,26 +76,30 @@ public class UIButtonSFX : MonoBehaviour,
     }
 
     private void PlayHover()
-    {
-        if (hoverClip == null || uiAudioSource == null)
-            return;
+{
+    if (suppressSfx) return;
 
-        if (Time.unscaledTime - lastHoverTime < hoverCooldown)
-            return;
+    if (hoverClip == null || uiAudioSource == null)
+        return;
 
-        lastHoverTime = Time.unscaledTime;
+    if (Time.unscaledTime - lastHoverTime < hoverCooldown)
+        return;
 
-        uiAudioSource.pitch = Random.Range(hoverPitchMin, hoverPitchMax);
-        uiAudioSource.PlayOneShot(hoverClip, hoverVolume);
-        uiAudioSource.pitch = 1f;
-    }
+    lastHoverTime = Time.unscaledTime;
 
-    private void PlayClick()
-    {
-        if (clickClip == null || uiAudioSource == null)
-            return;
+    uiAudioSource.pitch = Random.Range(hoverPitchMin, hoverPitchMax);
+    uiAudioSource.PlayOneShot(hoverClip, hoverVolume);
+    uiAudioSource.pitch = 1f;
+}
 
-        uiAudioSource.pitch = 1f;
-        uiAudioSource.PlayOneShot(clickClip, clickVolume);
-    }
+private void PlayClick()
+{
+    if (suppressSfx) return;
+
+    if (clickClip == null || uiAudioSource == null)
+        return;
+
+    uiAudioSource.pitch = 1f;
+    uiAudioSource.PlayOneShot(clickClip, clickVolume);
+}
 }
