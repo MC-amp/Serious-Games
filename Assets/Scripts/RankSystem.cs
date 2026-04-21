@@ -32,6 +32,10 @@ public class RankSystem : MonoBehaviour
     [SerializeField] private int correctSolvedCount = 0;
 
     public int CorrectSolvedCount => correctSolvedCount;
+    //the win screens
+    public GameObject IDWin;
+    public GameObject IDBaBWin;
+    public bool IsIDWon = false;
 
     private void Start()
     {
@@ -87,5 +91,13 @@ public class RankSystem : MonoBehaviour
 
         if (rank.activationSfx != null && audioSource != null)
             audioSource.PlayOneShot(rank.activationSfx);
+    }
+     void IDWon()
+    {
+        if(correctSolvedCount == 9)
+        {
+            IsIDWon = true;
+            Debug.Log("it worked!!");
+        }
     }
 }

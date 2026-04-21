@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: 64a4c69a461625d4f951a66bfd627e9a
-=======
-guid: 0219c90242cd9ec4cb807e7df610e28c
->>>>>>> Stashed changes
+guid: f4431b2573d02aa4f9df858ad726069b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 870970725279591002
-    second: One Game Finished_0
+      213: 3742171056642763811
+    second: Certificate Button - Locked_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -104,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: One Game Finished_0
+      name: Certificate Button - Locked_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 15
-        width: 1887
-        height: 1054
+        x: 0
+        y: 0
+        width: 1000
+        height: 335
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5aed02924f461c00800000000000000
-      internalID: 870970725279591002
+      spriteID: 32ca0f7cfbcdee330800000000000000
+      internalID: 3742171056642763811
       vertices: []
       indices: 
       edges: []
@@ -139,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      One Game Finished_0: 870970725279591002
+      Certificate Button - Locked_0: 3742171056642763811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

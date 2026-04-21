@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: 64a4c69a461625d4f951a66bfd627e9a
-=======
-guid: 0219c90242cd9ec4cb807e7df610e28c
->>>>>>> Stashed changes
+guid: ffad3262966308247b5f21e5b52b621d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 870970725279591002
-    second: One Game Finished_0
+      213: -34092131078630277
+    second: View Certificate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -104,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: One Game Finished_0
+      name: View Certificate_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 15
-        width: 1887
-        height: 1054
+        x: 0
+        y: 2
+        width: 250
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5aed02924f461c00800000000000000
-      internalID: 870970725279591002
+      spriteID: b741c6d2361e68ff0800000000000000
+      internalID: -34092131078630277
       vertices: []
       indices: 
       edges: []
@@ -139,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      One Game Finished_0: 870970725279591002
+      View Certificate_0: -34092131078630277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
