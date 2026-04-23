@@ -39,6 +39,13 @@ public class WanderingUIButton : MonoBehaviour
     public float dartDurationMax = 0.6f;
     public float dartSpeedMultiplier = 2.2f;
 
+    [Header("Bug Avoidance")]
+    public bool avoidOtherBugs = true;
+    public float avoidanceRadius = 100f;
+    public float avoidanceStrength = 0.9f;
+    public float avoidanceCheckInterval = 0.12f;
+    public float avoidanceDartDuration = 0.25f;
+
     [Header("Optional")]
     public bool stopIfButtonDisabled = true;
     public bool stopIfInactive = true;
@@ -58,6 +65,9 @@ public class WanderingUIButton : MonoBehaviour
     private float pauseTimer;
     private float dartTimer;
 
+    private WanderingUIButton[] allBugs;
+    private float avoidanceCheckTimer;
+
     private bool IsPaused => pauseTimer > 0f;
     private bool IsDarting => dartTimer > 0f;
 
@@ -76,64 +86,37 @@ public class WanderingUIButton : MonoBehaviour
         PickRandomDirection();
         ResetDirectionTimer();
 
+        allBugs = FindObjectsOfType<WanderingUIButton>(true);
+
         if (debugLogs)
         {
             Debug.Log($"[{name}] Awake | parentRect={(parentRect != null ? parentRect.name : "NULL")} | boundary={(boundaryPolygon != null ? boundaryPolygon.name : "NULL")}");
-            Debug.Log($"[{name}] Start anchoredPosition={rectTransform.anchoredPosition} direction={direction}");
         }
     }
 
     private void Update()
     {
-        if (boundaryPolygon == null)
-        {
-            LogOncePerSecond("No boundaryPolygon assigned.");
+        if (boundaryPolygon == null || parentRect == null)
             return;
-        }
-
-        if (parentRect == null)
-        {
-            LogOncePerSecond("No parent RectTransform found.");
-            return;
-        }
 
         if (stopIfInactive && !gameObject.activeInHierarchy)
-        {
-            LogOncePerSecond("Blocked because object is inactive.");
             return;
-        }
 
         if (stopIfButtonDisabled && button != null && !button.interactable)
-        {
-            LogOncePerSecond("Blocked because Button.interactable is false.");
             return;
-        }
 
         if (boundaryPolygon.PointCount < 3)
-        {
-            LogOncePerSecond($"Blocked because polygon has only {boundaryPolygon.PointCount} points.");
             return;
-        }
 
         UpdateBehaviorTimers();
         TryStartPauseOrDart();
-
-        Vector2 currentPos = rectTransform.anchoredPosition;
-        bool currentInside = boundaryPolygon.IsInside(currentPos, parentRect);
-
-        if (!currentInside)
-        {
-            LogOncePerSecond($"Current position is OUTSIDE polygon. anchoredPosition={currentPos}");
-        }
+        HandleBugAvoidance();
 
         directionTimer -= Time.unscaledDeltaTime;
         if (directionTimer <= 0f)
         {
             PickRandomDirection();
             ResetDirectionTimer();
-
-            if (debugLogs)
-                Debug.Log($"[{name}] Picked new direction {direction}");
         }
 
         if (!IsPaused)
@@ -143,22 +126,64 @@ public class WanderingUIButton : MonoBehaviour
             UpdateFacing();
     }
 
+    private void HandleBugAvoidance()
+    {
+        if (!avoidOtherBugs)
+            return;
+
+        avoidanceCheckTimer -= Time.unscaledDeltaTime;
+        if (avoidanceCheckTimer > 0f)
+            return;
+
+        avoidanceCheckTimer = avoidanceCheckInterval;
+
+        if (allBugs == null || allBugs.Length == 0)
+            allBugs = FindObjectsOfType<WanderingUIButton>(true);
+
+        Vector2 myPos = rectTransform.anchoredPosition;
+        Vector2 flee = Vector2.zero;
+        int nearbyCount = 0;
+
+        for (int i = 0; i < allBugs.Length; i++)
+        {
+            var other = allBugs[i];
+            if (other == null || other == this) continue;
+            if (!other.gameObject.activeInHierarchy) continue;
+            if (other.parentRect != parentRect) continue;
+
+            Vector2 otherPos = other.rectTransform.anchoredPosition;
+            Vector2 offset = myPos - otherPos;
+            float distance = offset.magnitude;
+
+            if (distance <= 0.001f || distance > avoidanceRadius)
+                continue;
+
+            float weight = 1f - (distance / avoidanceRadius);
+            flee += offset.normalized * weight;
+            nearbyCount++;
+        }
+
+        if (nearbyCount == 0 || flee.sqrMagnitude < 0.0001f)
+            return;
+
+        direction = Vector2.Lerp(direction, flee.normalized, avoidanceStrength).normalized;
+
+        if (useDarts)
+            dartTimer = Mathf.Max(dartTimer, avoidanceDartDuration);
+
+        pauseTimer = 0f;
+        ResetDirectionTimer();
+    }
+
     private void UpdateBehaviorTimers()
     {
-        if (pauseTimer > 0f)
-            pauseTimer -= Time.unscaledDeltaTime;
-
-        if (dartTimer > 0f)
-            dartTimer -= Time.unscaledDeltaTime;
-
-        if (pauseTimer < 0f) pauseTimer = 0f;
-        if (dartTimer < 0f) dartTimer = 0f;
+        if (pauseTimer > 0f) pauseTimer -= Time.unscaledDeltaTime;
+        if (dartTimer > 0f) dartTimer -= Time.unscaledDeltaTime;
     }
 
     private void TryStartPauseOrDart()
     {
-        if (IsPaused || IsDarting)
-            return;
+        if (IsPaused || IsDarting) return;
 
         float dt = Time.unscaledDeltaTime;
 
@@ -171,7 +196,6 @@ public class WanderingUIButton : MonoBehaviour
         if (useDarts && Random.value < dartChancePerSecond * dt)
         {
             dartTimer = Random.Range(dartDurationMin, dartDurationMax);
-
             PickRandomDirection();
             ResetDirectionTimer();
         }
@@ -182,27 +206,16 @@ public class WanderingUIButton : MonoBehaviour
         Vector2 currentPos = rectTransform.anchoredPosition;
         Vector2 moveDir = GetWobbledDirection();
 
-        float currentSpeed = moveSpeed;
+        float speed = moveSpeed;
         if (IsDarting)
-            currentSpeed *= dartSpeedMultiplier;
+            speed *= dartSpeedMultiplier;
 
-        Vector2 nextPos = currentPos + moveDir * currentSpeed * Time.unscaledDeltaTime;
+        Vector2 nextPos = currentPos + moveDir * speed * Time.unscaledDeltaTime;
         Vector2 probePos = nextPos + moveDir * probeDistance;
 
-        bool nextInside = boundaryPolygon.IsInside(nextPos, parentRect);
-        bool probeInside = boundaryPolygon.IsInside(probePos, parentRect);
-
-        if (drawDebugLine)
+        if (!boundaryPolygon.IsInside(nextPos, parentRect) ||
+            !boundaryPolygon.IsInside(probePos, parentRect))
         {
-            Vector3 worldA = rectTransform.TransformPoint(Vector3.zero);
-            Vector3 localNext = new Vector3(nextPos.x, nextPos.y, 0f);
-            Vector3 worldB = parentRect.TransformPoint(localNext);
-            Debug.DrawLine(worldA, worldB, nextInside && probeInside ? Color.green : Color.red);
-        }
-
-        if (!nextInside || !probeInside)
-        {
-            LogOncePerSecond($"Move blocked. nextInside={nextInside}, probeInside={probeInside}, current={currentPos}, next={nextPos}, probe={probePos}");
             BounceAway();
             return;
         }
@@ -213,48 +226,24 @@ public class WanderingUIButton : MonoBehaviour
     private Vector2 GetWobbledDirection()
     {
         float angleOffset = Mathf.Sin(Time.unscaledTime * wobbleSpeed) * wobbleStrength;
+        float rad = angleOffset * Mathf.Deg2Rad;
 
-        float radians = angleOffset * Mathf.Deg2Rad;
-        float cos = Mathf.Cos(radians);
-        float sin = Mathf.Sin(radians);
-
-        Vector2 wobbled = new Vector2(
-            direction.x * cos - direction.y * sin,
-            direction.x * sin + direction.y * cos
-        );
-
-        return wobbled.normalized;
+        return new Vector2(
+            direction.x * Mathf.Cos(rad) - direction.y * Mathf.Sin(rad),
+            direction.x * Mathf.Sin(rad) + direction.y * Mathf.Cos(rad)
+        ).normalized;
     }
 
     private void BounceAway()
     {
         direction = -direction;
-
-        float angle = Random.Range(-bounceAngleVariance, bounceAngleVariance) * Mathf.Deg2Rad;
-        float cos = Mathf.Cos(angle);
-        float sin = Mathf.Sin(angle);
-
-        Vector2 newDir = new Vector2(
-            direction.x * cos - direction.y * sin,
-            direction.x * sin + direction.y * cos
-        );
-
-        direction = newDir.normalized;
-
-        if (direction.sqrMagnitude < 0.001f)
-            direction = Random.insideUnitCircle.normalized;
-
         pauseTimer = 0f;
-
         ResetDirectionTimer();
     }
 
     private void PickRandomDirection()
     {
         direction = Random.insideUnitCircle.normalized;
-
-        if (direction.sqrMagnitude < 0.001f)
-            direction = Vector2.right;
     }
 
     private void ResetDirectionTimer()
@@ -264,30 +253,15 @@ public class WanderingUIButton : MonoBehaviour
 
     private void UpdateFacing()
     {
-        Vector2 facingDir = GetWobbledDirection();
+        Vector2 dir = GetWobbledDirection();
+        if (dir.sqrMagnitude < 0.0001f) return;
 
-        if (facingDir.sqrMagnitude < 0.0001f)
-            return;
-
-        float targetAngle = Mathf.Atan2(facingDir.y, facingDir.x) * Mathf.Rad2Deg - 90f;
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetAngle);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
 
         rectTransform.localRotation = Quaternion.Lerp(
             rectTransform.localRotation,
-            targetRotation,
+            Quaternion.Euler(0f, 0f, angle),
             Time.unscaledDeltaTime * rotationLerpSpeed
         );
-    }
-
-    private void LogOncePerSecond(string msg)
-    {
-        if (!debugLogs)
-            return;
-
-        if (Time.unscaledTime >= debugTimer)
-        {
-            debugTimer = Time.unscaledTime + 1f;
-            Debug.Log($"[{name}] {msg}");
-        }
     }
 }
