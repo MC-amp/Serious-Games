@@ -5,7 +5,7 @@ using TMPro;
 
 public class FreeplayManager : MonoBehaviour
 {
-    [Header("Bug Slots")]
+    [Header("Bug Slöts")]
     public BugSlot headSlot;
     public BugSlot bodySlot;
     public BugSlot legSlot;
