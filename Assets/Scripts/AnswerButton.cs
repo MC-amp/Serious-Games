@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AnswerButton : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class AnswerButton : MonoBehaviour
     [Header("Rank System")]
     public RankSystem rankSystem;
 
+    [Header("Toggle Reset")]
+    public List<Toggle> exemptToggles = new List<Toggle>();
+
     private Button button;
 
     private const float LOCK_ANSWER_SECONDS = 2f;
@@ -56,6 +60,9 @@ public class AnswerButton : MonoBehaviour
 
         foreach (Toggle toggle in toggles)
         {
+            if (exemptToggles.Contains(toggle))
+                continue;
+
             toggle.isOn = false;
         }
     }

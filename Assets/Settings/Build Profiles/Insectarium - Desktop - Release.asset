@@ -29,9 +29,11 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Freeplay.unity
   - m_enabled: 1
-    m_path: Assets/Compendium Pages/Learn/Learn.unity
+    m_path: Assets/Scenes/Learn.unity
   - m_enabled: 1
     m_path: Assets/Scenes/AboutCredits.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Certificate.unity
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

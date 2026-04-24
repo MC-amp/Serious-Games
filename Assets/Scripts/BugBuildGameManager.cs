@@ -32,6 +32,10 @@ public class BugBuildGameManager : MonoBehaviour
     [Header("Finish Button")]
     public Button finishButton;
 
+    [Header("Completion")]
+    [Tooltip("Turns on after the final correct result finishes showing.")]
+    public GameObject completionAsset;
+
     [Header("Bug Slots")]
     public BugSlot headSlot;
     public BugSlot bodySlot;
@@ -60,6 +64,9 @@ public class BugBuildGameManager : MonoBehaviour
     {
         if (finishButton != null)
             finishButton.onClick.AddListener(CheckBuild);
+
+        if (completionAsset != null)
+            completionAsset.SetActive(false);
 
         HideResult();
         UpdatePrompt();
@@ -122,7 +129,7 @@ public class BugBuildGameManager : MonoBehaviour
         UpdateStarDisplay();
 
         if (GlobalProgressManager.Instance != null)
-        GlobalProgressManager.Instance.AddBuildABugCorrect();
+            GlobalProgressManager.Instance.AddBuildABugCorrect();
 
         yield return new WaitForSeconds(correctResultDuration);
 
@@ -144,6 +151,13 @@ public class BugBuildGameManager : MonoBehaviour
             }
 
             HideResult();
+
+            if (completionAsset != null)
+                completionAsset.SetActive(true);
+
+            if (finishButton != null)
+                finishButton.interactable = false;
+
             isChecking = false;
             yield break;
         }
