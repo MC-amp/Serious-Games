@@ -1409,13 +1409,13 @@ RectTransform:
   - {fileID: 416241232}
   - {fileID: 587343280}
   - {fileID: 2054485444}
+  - {fileID: 115979535}
   - {fileID: 1069779913}
   - {fileID: 1000173432}
   - {fileID: 1254761277}
   - {fileID: 2127374438}
   - {fileID: 139038090}
   - {fileID: 1181579324}
-  - {fileID: 115979535}
   - {fileID: 301337224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3233,7 +3233,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2

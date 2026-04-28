@@ -2234,11 +2234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3233715503753821282, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 541.16
+      value: 1230.5
       objectReference: {fileID: 0}
     - target: {fileID: 3233715503753821282, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 475.1
+      value: 867.1
       objectReference: {fileID: 0}
     - target: {fileID: 3233715503753821282, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2298,11 +2298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140426137371690861, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2544
+      value: -1119
       objectReference: {fileID: 0}
     - target: {fileID: 4140426137371690861, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 4140426137371690861, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2330,7 +2330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073115062934448111, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: openX
-      value: 298
+      value: 992
       objectReference: {fileID: 0}
     - target: {fileID: 7073115062934448111, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
       propertyPath: bookVolume
@@ -5801,8 +5801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1655.9999, y: 932}
-  m_SizeDelta: {x: 3312, y: 1862.66}
+  m_AnchoredPosition: {x: 960, y: 540.33}
+  m_SizeDelta: {x: 1920, y: 1079.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &310981840
 GameObject:
@@ -14276,7 +14276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &694446891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17679,7 +17679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   hoverClip: {fileID: 8300000, guid: 7d03c0347e8ef684b9fd7784ea792642, type: 3}
-  clickClip: {fileID: 8300000, guid: 9ad17d4b6e64316478a9ffb7a560f105, type: 3}
+  clickClip: {fileID: 8300000, guid: 34c4686396c03604bb155109c6c1f5e5, type: 3}
   hoverVolume: 1
   clickVolume: 1
   hoverPitchMin: 0.95
