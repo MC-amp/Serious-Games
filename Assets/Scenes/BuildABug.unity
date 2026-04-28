@@ -182,40 +182,40 @@ MonoBehaviour:
     partType: 1
     parts:
     - partID: FlyBody1
-      wheelSprite: {fileID: 1425479255988327976, guid: be47d07b464767c4698101e0a149b8af, type: 3}
-      buildSprite: {fileID: 1425479255988327976, guid: be47d07b464767c4698101e0a149b8af, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 6205526b2bffac34abd708ec101489da, type: 3}
+      buildSprite: {fileID: 21300000, guid: 6205526b2bffac34abd708ec101489da, type: 3}
       bugType: 0
     - partID: BeeBody1
-      wheelSprite: {fileID: 1545001937600580135, guid: 908ff13d7b0948748885c16aec695ace, type: 3}
-      buildSprite: {fileID: 1545001937600580135, guid: 908ff13d7b0948748885c16aec695ace, type: 3}
+      wheelSprite: {fileID: 21300000, guid: bbb0e4403074ace4d830216c5c3fde83, type: 3}
+      buildSprite: {fileID: 21300000, guid: bbb0e4403074ace4d830216c5c3fde83, type: 3}
       bugType: 1
     - partID: BeeBody2
-      wheelSprite: {fileID: 4010637454384260676, guid: 77a2ba2eb999bc54f90d3435dd4476a1, type: 3}
-      buildSprite: {fileID: 4010637454384260676, guid: 77a2ba2eb999bc54f90d3435dd4476a1, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 60baa8c609b21c64aa082dd279f7685f, type: 3}
+      buildSprite: {fileID: 21300000, guid: 60baa8c609b21c64aa082dd279f7685f, type: 3}
       bugType: 1
     - partID: WaspBody1
-      wheelSprite: {fileID: 6421195575905487841, guid: c7da1f64eb94559418e81039c5d4e44f, type: 3}
-      buildSprite: {fileID: 6421195575905487841, guid: c7da1f64eb94559418e81039c5d4e44f, type: 3}
+      wheelSprite: {fileID: 21300000, guid: db60b070ac6bf574d815c06ef5d6839e, type: 3}
+      buildSprite: {fileID: 21300000, guid: db60b070ac6bf574d815c06ef5d6839e, type: 3}
       bugType: 2
     - partID: FlyBody2
-      wheelSprite: {fileID: -5411720683599613631, guid: aa1e63e1674e561428ffc8e36d3b86e9, type: 3}
-      buildSprite: {fileID: -5411720683599613631, guid: aa1e63e1674e561428ffc8e36d3b86e9, type: 3}
+      wheelSprite: {fileID: 21300000, guid: a3169b79c436afa47b91dd0e6a38c6e9, type: 3}
+      buildSprite: {fileID: 21300000, guid: a3169b79c436afa47b91dd0e6a38c6e9, type: 3}
       bugType: 0
     - partID: WaspBody2
-      wheelSprite: {fileID: 5134189249833641513, guid: a7098e555c5d1cf4aa8cf0477b293c92, type: 3}
-      buildSprite: {fileID: 5134189249833641513, guid: a7098e555c5d1cf4aa8cf0477b293c92, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 38bdcac191c34be4c9ae2a695f9aaa62, type: 3}
+      buildSprite: {fileID: 21300000, guid: 38bdcac191c34be4c9ae2a695f9aaa62, type: 3}
       bugType: 2
     - partID: WaspBody3
-      wheelSprite: {fileID: -6867218786449344505, guid: adb90e413b3533b40ac9c243ec507472, type: 3}
-      buildSprite: {fileID: -6867218786449344505, guid: adb90e413b3533b40ac9c243ec507472, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 3a7b89cbdf268fa4bac9cecb52039e34, type: 3}
+      buildSprite: {fileID: 21300000, guid: 3a7b89cbdf268fa4bac9cecb52039e34, type: 3}
       bugType: 2
     - partID: BeeBody3
-      wheelSprite: {fileID: 4027629879767457449, guid: e81f8608cd0043748967f7529813ac2c, type: 3}
-      buildSprite: {fileID: 4027629879767457449, guid: e81f8608cd0043748967f7529813ac2c, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 67081f9b65c412848b2145a64b2c0293, type: 3}
+      buildSprite: {fileID: 21300000, guid: 67081f9b65c412848b2145a64b2c0293, type: 3}
       bugType: 1
     - partID: FlyBody3
-      wheelSprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
-      buildSprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 64b7fbbdd7f956b40b76e71adffd3f6c, type: 3}
+      buildSprite: {fileID: 21300000, guid: 64b7fbbdd7f956b40b76e71adffd3f6c, type: 3}
       bugType: 0
 --- !u!1 &8665956
 GameObject:
@@ -390,8 +390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -940, y: 70}
-  m_SizeDelta: {x: 1100, y: 1100}
+  m_AnchoredPosition: {x: -940, y: 0}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26706940
 MonoBehaviour:
@@ -415,7 +415,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 83324fdc096aa46419e8e6b954ff0bc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d2c358bb49fea514da9f1a0e9aebc3a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1514,39 +1514,39 @@ MonoBehaviour:
     parts:
     - partID: WaspWings1
       wheelSprite: {fileID: 21300000, guid: b2dc4ab469aa43e499dd2d66ce7bdc08, type: 3}
-      buildSprite: {fileID: 21300000, guid: c30bfb0d2c2085b4a8e005cd1bc41278, type: 3}
+      buildSprite: {fileID: 21300000, guid: 7e69f318078799d4b8ff750d78fdf1a8, type: 3}
       bugType: 2
     - partID: WaspWings2
       wheelSprite: {fileID: 21300000, guid: 688e0a9c08fa6bb4aaa62df6c3c84e55, type: 3}
-      buildSprite: {fileID: 21300000, guid: 6182d46d8f402f749965c1acd079e5f2, type: 3}
+      buildSprite: {fileID: 21300000, guid: f19d1eb6a9da2ec4099d31cb20e5f5e4, type: 3}
       bugType: 2
     - partID: BeeWings1
       wheelSprite: {fileID: 21300000, guid: fd53a89249c43954fb3beb54d8d42fcf, type: 3}
-      buildSprite: {fileID: 21300000, guid: b8fcbea073751d545b955050472bd2ef, type: 3}
+      buildSprite: {fileID: 21300000, guid: 0a59b4aa321f1ef4d983cc0dd6bb348d, type: 3}
       bugType: 1
     - partID: FlyWings1
       wheelSprite: {fileID: 21300000, guid: a44a6fb499164a049bb6ce1c756aeab8, type: 3}
-      buildSprite: {fileID: 21300000, guid: 7ac4738df47920d478a42563896020ff, type: 3}
+      buildSprite: {fileID: 21300000, guid: 858d63191d1ae694ba8ba06eced28f9f, type: 3}
       bugType: 0
     - partID: BeeWings2
       wheelSprite: {fileID: 21300000, guid: b96978852382f90418d797ebdd034fd9, type: 3}
-      buildSprite: {fileID: 21300000, guid: 38f82d7feab5e2146af7c09f1e5daa2a, type: 3}
+      buildSprite: {fileID: 21300000, guid: eb16f04e0fd4349409aa1c1769d6a7dc, type: 3}
       bugType: 1
     - partID: FlyWings2
       wheelSprite: {fileID: 21300000, guid: 288da53704dc34d4985ac9743d173d9b, type: 3}
-      buildSprite: {fileID: 21300000, guid: ae753df196013f44dacfe1570f17375e, type: 3}
+      buildSprite: {fileID: 21300000, guid: 8314d9c5bda1b3f4a8951609cb854ef3, type: 3}
       bugType: 0
     - partID: FlyWings3
       wheelSprite: {fileID: 21300000, guid: 7d607a06f75f8f24ab00f5cfc977bf81, type: 3}
-      buildSprite: {fileID: 21300000, guid: 0ad088e89da48c34f8bb9d599bf5065e, type: 3}
+      buildSprite: {fileID: 21300000, guid: 1d3e5a41714453d4799a33ed5bd8a895, type: 3}
       bugType: 0
     - partID: WaspWings3
       wheelSprite: {fileID: 21300000, guid: 7156ec5b99648a64f87f60b63f4a8c81, type: 3}
-      buildSprite: {fileID: 21300000, guid: f679665ed8065f446b4b1fc64bbed9bc, type: 3}
+      buildSprite: {fileID: 21300000, guid: b48dd07c90d448d4c8ef5d25cc6830b8, type: 3}
       bugType: 2
     - partID: BeeWings3
       wheelSprite: {fileID: 21300000, guid: d2c358bb49fea514da9f1a0e9aebc3a8, type: 3}
-      buildSprite: {fileID: 21300000, guid: 2050c56fb7885d042b3aa18ff3293e74, type: 3}
+      buildSprite: {fileID: 21300000, guid: 48cde7d27693b4c499c63336880bba2f, type: 3}
       bugType: 1
 --- !u!1 &194164384
 GameObject:
@@ -1740,40 +1740,40 @@ MonoBehaviour:
     partType: 0
     parts:
     - partID: WaspHead1
-      wheelSprite: {fileID: 21300000, guid: 0b93966d79df30644906e15a8485ebd3, type: 3}
-      buildSprite: {fileID: 21300000, guid: 0b93966d79df30644906e15a8485ebd3, type: 3}
+      wheelSprite: {fileID: 21300000, guid: e56621d040bd7bf42a6766ce758eed59, type: 3}
+      buildSprite: {fileID: 21300000, guid: e56621d040bd7bf42a6766ce758eed59, type: 3}
       bugType: 2
     - partID: FlyHead1
-      wheelSprite: {fileID: 21300000, guid: 3ed69ec2b78f19d45bc83b0c9a994194, type: 3}
-      buildSprite: {fileID: 21300000, guid: 3ed69ec2b78f19d45bc83b0c9a994194, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 430da763b30438340ab41e8fe9e644fb, type: 3}
+      buildSprite: {fileID: 21300000, guid: 430da763b30438340ab41e8fe9e644fb, type: 3}
       bugType: 0
     - partID: WaspHead2
-      wheelSprite: {fileID: 21300000, guid: c3f61686e98325e43979ac79fdc3bf84, type: 3}
-      buildSprite: {fileID: 21300000, guid: c3f61686e98325e43979ac79fdc3bf84, type: 3}
+      wheelSprite: {fileID: 21300000, guid: ee3858b5bab1de04db4a39eecc0158a7, type: 3}
+      buildSprite: {fileID: 21300000, guid: ee3858b5bab1de04db4a39eecc0158a7, type: 3}
       bugType: 2
     - partID: FlyHead2
-      wheelSprite: {fileID: 21300000, guid: 11411700f69054749b907b3d17a57be2, type: 3}
-      buildSprite: {fileID: 21300000, guid: 11411700f69054749b907b3d17a57be2, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 31edfdf27aac52f4d8279e0371d51d21, type: 3}
+      buildSprite: {fileID: 21300000, guid: 31edfdf27aac52f4d8279e0371d51d21, type: 3}
       bugType: 0
     - partID: BeeHead1
-      wheelSprite: {fileID: 21300000, guid: d678b996b1fb8dd4f8a41fcb75e8ea7c, type: 3}
-      buildSprite: {fileID: 21300000, guid: d678b996b1fb8dd4f8a41fcb75e8ea7c, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 608880685eafb5e4dbaad03ba30b0821, type: 3}
+      buildSprite: {fileID: 21300000, guid: 608880685eafb5e4dbaad03ba30b0821, type: 3}
       bugType: 1
     - partID: WaspHead3
-      wheelSprite: {fileID: 21300000, guid: e41539b58bcb91e4a8d26d0411f18756, type: 3}
-      buildSprite: {fileID: 21300000, guid: e41539b58bcb91e4a8d26d0411f18756, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 3301615b032d0424bb1f82277d086335, type: 3}
+      buildSprite: {fileID: 21300000, guid: 3301615b032d0424bb1f82277d086335, type: 3}
       bugType: 2
     - partID: BeeHead2
-      wheelSprite: {fileID: 21300000, guid: afab9052c51c46241b9e8f6a4941336a, type: 3}
-      buildSprite: {fileID: 21300000, guid: afab9052c51c46241b9e8f6a4941336a, type: 3}
+      wheelSprite: {fileID: 21300000, guid: 4d5705cae91137244a35db3c7e303d7a, type: 3}
+      buildSprite: {fileID: 21300000, guid: 4d5705cae91137244a35db3c7e303d7a, type: 3}
       bugType: 1
     - partID: BeeHead3
-      wheelSprite: {fileID: 21300000, guid: 2a0395461b73073479c8aac36c98546f, type: 3}
-      buildSprite: {fileID: 21300000, guid: 2a0395461b73073479c8aac36c98546f, type: 3}
+      wheelSprite: {fileID: 21300000, guid: c87e1db277cb4cc40ba1ef2fd1599971, type: 3}
+      buildSprite: {fileID: 21300000, guid: c87e1db277cb4cc40ba1ef2fd1599971, type: 3}
       bugType: 1
     - partID: FlyHead3
-      wheelSprite: {fileID: 21300000, guid: 5fb1b285f04dad54188b33d396567a62, type: 3}
-      buildSprite: {fileID: 21300000, guid: 5fb1b285f04dad54188b33d396567a62, type: 3}
+      wheelSprite: {fileID: 21300000, guid: d53a8a8a20c9e314593da1477517d14e, type: 3}
+      buildSprite: {fileID: 21300000, guid: d53a8a8a20c9e314593da1477517d14e, type: 3}
       bugType: 0
 --- !u!1 &198764021
 GameObject:
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 608880685eafb5e4dbaad03ba30b0821, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e56621d040bd7bf42a6766ce758eed59, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5db11fa222789a9458e2e9e4c69b0281, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4430,8 +4430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -945, y: 0}
-  m_SizeDelta: {x: 1400, y: 1400}
+  m_AnchoredPosition: {x: -940, y: -75}
+  m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698523807
 MonoBehaviour:
@@ -4455,7 +4455,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5313,7 +5313,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -249.49998, y: 140.7}
-  m_SizeDelta: {x: 400, y: 900}
+  m_SizeDelta: {x: 900, y: 1800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753630778
 MonoBehaviour:
@@ -5330,14 +5330,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 200, y: 400, z: 200, w: 500}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38bdcac191c34be4c9ae2a695f9aaa62, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6861,8 +6861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 146}
-  m_SizeDelta: {x: 400, y: 900}
+  m_AnchoredPosition: {x: 0, y: 190}
+  m_SizeDelta: {x: 1000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037862355
 MonoBehaviour:
@@ -6879,14 +6879,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 200, y: 450, z: 200, w: 700}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38bdcac191c34be4c9ae2a695f9aaa62, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7555,7 +7555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e37091b4946c30a4ea2244801c4904df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5db11fa222789a9458e2e9e4c69b0281, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7608,7 +7608,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 279.5, y: 140.7}
-  m_SizeDelta: {x: 400, y: 900}
+  m_SizeDelta: {x: 900, y: 1800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1167853373
 MonoBehaviour:
@@ -7625,14 +7625,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 200, y: 400, z: 200, w: 500}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38bdcac191c34be4c9ae2a695f9aaa62, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7965,8 +7965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -940, y: 55}
-  m_SizeDelta: {x: 1200, y: 1200}
+  m_AnchoredPosition: {x: -940, y: 0}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243231605
 MonoBehaviour:
@@ -7990,7 +7990,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8207,7 +8207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d2c358bb49fea514da9f1a0e9aebc3a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9148,7 +9148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.66, y: 1.88}
+  m_AnchoredPosition: {x: -5.3, y: 1.69}
   m_SizeDelta: {x: 2619.7, y: 1540.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466501286
@@ -9344,7 +9344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d2c358bb49fea514da9f1a0e9aebc3a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10079,39 +10079,39 @@ MonoBehaviour:
     parts:
     - partID: FlyLegs1
       wheelSprite: {fileID: 21300000, guid: 25f2e7d35deb17846a3dd35eca27f6f0, type: 3}
-      buildSprite: {fileID: 21300000, guid: 923f2975fce10b14da9e6c6f7761842f, type: 3}
+      buildSprite: {fileID: 21300000, guid: 78ec0bf3452cac94db490f89398b6954, type: 3}
       bugType: 0
     - partID: FlyLegs2
       wheelSprite: {fileID: 21300000, guid: 5c0ce2965151c7a4d8c249b627960f0a, type: 3}
-      buildSprite: {fileID: 21300000, guid: 719b2f57179a5924eba7c4c86f8da2d7, type: 3}
+      buildSprite: {fileID: 21300000, guid: 4911a1905a7ffc24cbbe67fdbfe0c3be, type: 3}
       bugType: 0
     - partID: WaspLegs1
       wheelSprite: {fileID: 21300000, guid: 307d5d8e7244c734387507007e2a6bd1, type: 3}
-      buildSprite: {fileID: 21300000, guid: 7503e9c72e8434044bcd376dddf631ea, type: 3}
+      buildSprite: {fileID: 21300000, guid: b74f53fdb6a59c64c805b7f571605f3a, type: 3}
       bugType: 2
     - partID: WaspLegs2
       wheelSprite: {fileID: 21300000, guid: 12bb3ee9a59229a4fa88c487513273ff, type: 3}
-      buildSprite: {fileID: 21300000, guid: d17ffd6e4616fba49a7704a69d9fed68, type: 3}
+      buildSprite: {fileID: 21300000, guid: 9c8c9990d2207f244be28981bb1b5bb4, type: 3}
       bugType: 2
     - partID: FlyLegs3
       wheelSprite: {fileID: 21300000, guid: 7f85efc01c9a1c04dba5f051b08a8f53, type: 3}
-      buildSprite: {fileID: 21300000, guid: 6ef28956cb4b62044aaf242028112a7a, type: 3}
+      buildSprite: {fileID: 21300000, guid: 6b9dc58998748274e8b6138357de2dfc, type: 3}
       bugType: 0
     - partID: BeeLegs1
       wheelSprite: {fileID: 21300000, guid: 83324fdc096aa46419e8e6b954ff0bc4, type: 3}
-      buildSprite: {fileID: 21300000, guid: 19eb418b222a41f4f961e6deb91355c1, type: 3}
+      buildSprite: {fileID: 21300000, guid: 5128e33e5a089ce43b630ee9bd34cf1a, type: 3}
       bugType: 1
     - partID: BeeLegs2
       wheelSprite: {fileID: 21300000, guid: e83949ae7fd45984d8c76c63173966b4, type: 3}
-      buildSprite: {fileID: 21300000, guid: 70ad7868ed786ff42b7495ce671fc7f9, type: 3}
+      buildSprite: {fileID: 21300000, guid: 9f2df5288bcb38542803d1b3faf98245, type: 3}
       bugType: 1
     - partID: BeeLegs3
       wheelSprite: {fileID: 21300000, guid: 5db11fa222789a9458e2e9e4c69b0281, type: 3}
-      buildSprite: {fileID: 21300000, guid: 4bea07deee758be44bd1f06e7ec69259, type: 3}
+      buildSprite: {fileID: 21300000, guid: a6fcfa82c90e633409caa4a57c182c54, type: 3}
       bugType: 1
     - partID: WaspLegs3
       wheelSprite: {fileID: 21300000, guid: 1b401208f3b51c64fb08c4bba7811938, type: 3}
-      buildSprite: {fileID: 21300000, guid: dd66b767023c46c42ae2774d34bd6b7f, type: 3}
+      buildSprite: {fileID: 21300000, guid: c775ad0acaed70449ad57e7cef6fc0a7, type: 3}
       bugType: 2
 --- !u!1 &1555166342
 GameObject:
@@ -10667,7 +10667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -940, y: -100}
+  m_AnchoredPosition: {x: -940, y: 0}
   m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719755475
@@ -10692,7 +10692,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -11404,7 +11404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 608880685eafb5e4dbaad03ba30b0821, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
