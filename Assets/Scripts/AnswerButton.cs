@@ -8,7 +8,7 @@ public class AnswerButton : MonoBehaviour
     [Header("Tags")]
     public string answerTag;
 
-    [Header("Right or Wröng")]
+    [Header("Right or Wrong")]
     public CanvasGroup correctGroup;
     public CanvasGroup wrongGroup;
 
@@ -38,8 +38,10 @@ public class AnswerButton : MonoBehaviour
     [Header("Toggle Reset")]
     public List<Toggle> exemptToggles = new List<Toggle>();
 
-    private Button button;
+    [Header("Compendium Reminder")]
+    public CompendiumReminderController compendiumReminder;
 
+    private Button button;
     private const float LOCK_ANSWER_SECONDS = 2f;
 
     private void Awake()
@@ -56,10 +58,19 @@ public class AnswerButton : MonoBehaviour
 
     void TurnOffAllToggles()
     {
-        Toggle[] toggles = FindObjectsOfType<Toggle>(true);
+        Toggle[] toggles = FindObjectsByType<Toggle>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
 
         foreach (Toggle toggle in toggles)
         {
+            if (toggle == null) continue;
+
+            // CHANGED: do not let answer reset affect settings reminder toggle
+            if (toggle.GetComponent<DoNotResetToggle>() != null)
+                continue;
+
             if (exemptToggles.Contains(toggle))
                 continue;
 
@@ -78,10 +89,13 @@ public class AnswerButton : MonoBehaviour
 
         StopAllCoroutines();
 
-        bool isCorrect = (selectedTag == answerTag);
+        bool isCorrect = selectedTag == answerTag;
 
         if (isCorrect)
         {
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterCorrect();
+
             PlaySfx(correctClip);
 
             GameObject selected = InsectSelectionManager.Instance.currentlySelected;
@@ -89,9 +103,7 @@ public class AnswerButton : MonoBehaviour
             {
                 IdentifyBugState bugState = selected.GetComponent<IdentifyBugState>();
                 if (bugState != null)
-                {
                     bugState.MarkSolved();
-                }
             }
 
             if (rankSystem != null)
@@ -104,6 +116,9 @@ public class AnswerButton : MonoBehaviour
         }
         else
         {
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterWrong();
+
             PlaySfx(wrongClip);
 
             if (wrongGroup != null)

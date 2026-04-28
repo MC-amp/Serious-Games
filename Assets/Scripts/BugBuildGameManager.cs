@@ -63,6 +63,9 @@ public class BugBuildGameManager : MonoBehaviour
     [Header("Bug Prompts")]
     public List<BugPrompt> prompts;
 
+    [Header("Compendium Reminder")]
+    public CompendiumReminderController compendiumReminder;
+
     private int currentPromptIndex = 0;
     private bool isChecking = false;
 
@@ -118,20 +121,20 @@ public class BugBuildGameManager : MonoBehaviour
         }
     }
 
-void Update()
-{
-    if (!tutorialShownThisPlaySession)
+    void Update()
     {
-        if (UnityEngine.InputSystem.Mouse.current != null &&
-            UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
+        if (!tutorialShownThisPlaySession)
         {
-            tutorialShownThisPlaySession = true;
+            if (UnityEngine.InputSystem.Mouse.current != null &&
+                UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                tutorialShownThisPlaySession = true;
 
-            if (tutorialPanel != null)
-                tutorialPanel.SetActive(true);
+                if (tutorialPanel != null)
+                    tutorialPanel.SetActive(true);
+            }
         }
     }
-}
 
     public void CheckBuild()
     {
@@ -140,6 +143,11 @@ void Update()
 
         if (!AllSlotsFilled())
         {
+
+            // Register wrong answer with compendium reminder
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterWrong();
+
             ShowResult(false, wrongResultDuration);
             return;
         }
@@ -155,10 +163,18 @@ void Update()
 
         if (!allCorrect)
         {
+
+            // Register wrong answer with compendium reminder
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterWrong();
+
             ShowResult(false, wrongResultDuration);
             ClearIncorrectSlots(targetType);
             return;
         }
+
+        if (compendiumReminder != null)
+            compendiumReminder.RegisterCorrect();
 
         StartCoroutine(HandleCorrectBuild());
     }

@@ -73,6 +73,12 @@ public class BookButton : MonoBehaviour
     private Vector2[] bookmarkBasePositions;
     private Vector3[] bookmarkBaseScales;
 
+    
+    public void RefreshBookVolume()
+    {
+        ApplyBookVolume();
+    }
+
     void Start()
     {
         if (panel == null)

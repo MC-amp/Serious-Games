@@ -4,15 +4,24 @@ using System.Collections.Generic;
 
 public class ToggleReset : MonoBehaviour
 {
-    [Header("Töggles to Ignore")]
+    [Header("Toggles to Ignore")]
     public List<Toggle> exemptToggles = new List<Toggle>();
 
     public void TurnOffAllToggles()
     {
-        Toggle[] toggles = FindObjectsOfType<Toggle>(true);
+        Toggle[] toggles = FindObjectsByType<Toggle>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
 
         foreach (Toggle toggle in toggles)
         {
+            if (toggle == null) continue;
+
+            // CHANGED: skip settings/reminder toggles
+            if (toggle.GetComponent<DoNotResetToggle>() != null)
+                continue;
+
             if (exemptToggles.Contains(toggle))
                 continue;
 
