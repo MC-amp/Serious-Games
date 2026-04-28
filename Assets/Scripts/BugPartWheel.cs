@@ -5,7 +5,9 @@ using UnityEngine.UI;
 [System.Serializable]
 public class BugPartOption
 {
-    public Sprite sprite;
+    public string partID;
+    public Sprite wheelSprite;
+    public Sprite buildSprite;
     public BugType bugType;
 }
 
@@ -33,13 +35,13 @@ public class BugPartWheel : MonoBehaviour
     [Header("Part Data")]
     public BugPartData partData;
 
-    [Header("Tutorial")]
-    public BugTutorialController tutorialController;
-
     private int currentIndex = 0;
 
-    // Tracks whether the head tutorial already completed the first placement cycle
-    private bool headTutorialPlacedOnce = false;
+    void Awake()
+    {
+        AddPreviewClick(leftPreview, ScrollLeft);
+        AddPreviewClick(rightPreview, ScrollRight);
+    }
 
     void Start()
     {
@@ -53,15 +55,24 @@ public class BugPartWheel : MonoBehaviour
         UpdateDisplay();
     }
 
+    private void AddPreviewClick(Image image, UnityEngine.Events.UnityAction action)
+    {
+        if (image == null) return;
+
+        Button button = image.GetComponent<Button>();
+
+        if (button == null)
+            button = image.gameObject.AddComponent<Button>();
+
+        button.onClick.AddListener(action);
+    }
+
     public void ScrollRight()
     {
         if (partData == null || partData.parts == null || partData.parts.Count == 0) return;
 
         currentIndex = (currentIndex + 1) % partData.parts.Count;
         UpdateDisplay();
-
-        if (tutorialController != null && partData.partType == PartType.Head)
-            tutorialController.NotifyHeadRightArrowClicked();
     }
 
     public void ScrollLeft()
@@ -69,6 +80,7 @@ public class BugPartWheel : MonoBehaviour
         if (partData == null || partData.parts == null || partData.parts.Count == 0) return;
 
         currentIndex--;
+
         if (currentIndex < 0)
             currentIndex = partData.parts.Count - 1;
 
@@ -80,21 +92,6 @@ public class BugPartWheel : MonoBehaviour
         if (targetSlot == null || partData == null || partData.parts == null || partData.parts.Count == 0) return;
 
         targetSlot.SetPart(partData.parts[currentIndex]);
-
-        if (tutorialController != null && partData.partType == PartType.Head)
-        {
-            // First click on head display: point to head slot
-            if (!headTutorialPlacedOnce)
-            {
-                tutorialController.NotifyHeadCenterClicked();
-                headTutorialPlacedOnce = true;
-            }
-            // Second click on head display after removal: hide until all 4 are placed
-            else
-            {
-                tutorialController.NotifyWaitingForAllParts();
-            }
-        }
     }
 
     public void RemovePart(BugPartOption usedPart)
@@ -102,6 +99,29 @@ public class BugPartWheel : MonoBehaviour
         if (partData == null || partData.parts == null || usedPart == null) return;
 
         partData.parts.Remove(usedPart);
+
+        ClampIndex();
+        UpdateDisplay();
+    }
+
+    public void RemovePartByID(string partID)
+    {
+        if (partData == null || partData.parts == null || string.IsNullOrEmpty(partID)) return;
+
+        partData.parts.RemoveAll(part => part.partID == partID);
+
+        ClampIndex();
+        UpdateDisplay();
+    }
+
+    public void RemovePartsByIDs(List<string> partIDs)
+    {
+        if (partIDs == null) return;
+
+        foreach (string id in partIDs)
+        {
+            RemovePartByID(id);
+        }
 
         ClampIndex();
         UpdateDisplay();
@@ -145,8 +165,8 @@ public class BugPartWheel : MonoBehaviour
         int leftIndex = (currentIndex - 1 + partData.parts.Count) % partData.parts.Count;
         int rightIndex = (currentIndex + 1) % partData.parts.Count;
 
-        centerDisplay.sprite = partData.parts[currentIndex].sprite;
-        leftPreview.sprite = partData.parts[leftIndex].sprite;
-        rightPreview.sprite = partData.parts[rightIndex].sprite;
+        centerDisplay.sprite = partData.parts[currentIndex].wheelSprite;
+        leftPreview.sprite = partData.parts[leftIndex].wheelSprite;
+        rightPreview.sprite = partData.parts[rightIndex].wheelSprite;
     }
 }

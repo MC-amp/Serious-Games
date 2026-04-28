@@ -181,25 +181,42 @@ MonoBehaviour:
   partData:
     partType: 1
     parts:
-    - sprite: {fileID: 21300000, guid: f2bb79d4fc69408498629f6e96fdabca, type: 3}
+    - partID: FlyBody1
+      wheelSprite: {fileID: 1425479255988327976, guid: be47d07b464767c4698101e0a149b8af, type: 3}
+      buildSprite: {fileID: 1425479255988327976, guid: be47d07b464767c4698101e0a149b8af, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: a97183fabbda63c4a984fb6b41dee645, type: 3}
+    - partID: BeeBody1
+      wheelSprite: {fileID: 1545001937600580135, guid: 908ff13d7b0948748885c16aec695ace, type: 3}
+      buildSprite: {fileID: 1545001937600580135, guid: 908ff13d7b0948748885c16aec695ace, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 72225d686d7353447a732244ae2f8156, type: 3}
+    - partID: BeeBody2
+      wheelSprite: {fileID: 4010637454384260676, guid: 77a2ba2eb999bc54f90d3435dd4476a1, type: 3}
+      buildSprite: {fileID: 4010637454384260676, guid: 77a2ba2eb999bc54f90d3435dd4476a1, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 43c2fb4e4636c8842b5600742b7008c2, type: 3}
+    - partID: WaspBody1
+      wheelSprite: {fileID: 6421195575905487841, guid: c7da1f64eb94559418e81039c5d4e44f, type: 3}
+      buildSprite: {fileID: 6421195575905487841, guid: c7da1f64eb94559418e81039c5d4e44f, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 53894a08600280f4baa56fe2e54b604d, type: 3}
+    - partID: FlyBody2
+      wheelSprite: {fileID: -5411720683599613631, guid: aa1e63e1674e561428ffc8e36d3b86e9, type: 3}
+      buildSprite: {fileID: -5411720683599613631, guid: aa1e63e1674e561428ffc8e36d3b86e9, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 7f4f0dac311ffef4eb705c44407aa72d, type: 3}
+    - partID: WaspBody2
+      wheelSprite: {fileID: 5134189249833641513, guid: a7098e555c5d1cf4aa8cf0477b293c92, type: 3}
+      buildSprite: {fileID: 5134189249833641513, guid: a7098e555c5d1cf4aa8cf0477b293c92, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: c45999cf9b77d4e47a5476070d1ec7e5, type: 3}
+    - partID: WaspBody3
+      wheelSprite: {fileID: -6867218786449344505, guid: adb90e413b3533b40ac9c243ec507472, type: 3}
+      buildSprite: {fileID: -6867218786449344505, guid: adb90e413b3533b40ac9c243ec507472, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: a3d0afb22d3254441915d310595dcbfa, type: 3}
+    - partID: BeeBody3
+      wheelSprite: {fileID: 4027629879767457449, guid: e81f8608cd0043748967f7529813ac2c, type: 3}
+      buildSprite: {fileID: 4027629879767457449, guid: e81f8608cd0043748967f7529813ac2c, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 7ef0b3e522cf4564bac6e06edf4a17e4, type: 3}
+    - partID: FlyBody3
+      wheelSprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
+      buildSprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
       bugType: 0
-  tutorialController: {fileID: 0}
 --- !u!1 &8665956
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -938.23, y: -178.32}
-  m_SizeDelta: {x: 900, y: 700}
+  m_AnchoredPosition: {x: -940, y: 70}
+  m_SizeDelta: {x: 1100, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26706940
 MonoBehaviour:
@@ -398,7 +415,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -427,7 +444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 3
-  tutorialController: {fileID: 0}
 --- !u!114 &26706943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SFXPlayer
   source: {fileID: 31363656}
   clickClip: {fileID: 8300000, guid: 671ed2393003ade4e86e3c7ccc26ff8c, type: 3}
-  correctClip: {fileID: 8300000, guid: 7db1382445e55d647bc3defde64b9a37, type: 3}
+  correctClip: {fileID: 8300000, guid: 9c960da49e842ed488f5776a798aad89, type: 3}
   wrongClip: {fileID: 8300000, guid: caf3f2d25d7b9df48b5fc96d9fcac517, type: 3}
 --- !u!1 &53136666
 GameObject:
@@ -1496,25 +1512,42 @@ MonoBehaviour:
   partData:
     partType: 3
     parts:
-    - sprite: {fileID: 21300000, guid: 3087673d521b3a042be534bd4d9cda4c, type: 3}
+    - partID: WaspWings1
+      wheelSprite: {fileID: 21300000, guid: b2dc4ab469aa43e499dd2d66ce7bdc08, type: 3}
+      buildSprite: {fileID: 21300000, guid: c30bfb0d2c2085b4a8e005cd1bc41278, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 23f4347319e0dd64bb397fbf18e655d5, type: 3}
+    - partID: WaspWings2
+      wheelSprite: {fileID: 21300000, guid: 688e0a9c08fa6bb4aaa62df6c3c84e55, type: 3}
+      buildSprite: {fileID: 21300000, guid: 6182d46d8f402f749965c1acd079e5f2, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 0f41d70d733ea5b4284f0b6e1519327e, type: 3}
+    - partID: BeeWings1
+      wheelSprite: {fileID: 21300000, guid: fd53a89249c43954fb3beb54d8d42fcf, type: 3}
+      buildSprite: {fileID: 21300000, guid: b8fcbea073751d545b955050472bd2ef, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 6e361a11335b288488573e269e563c48, type: 3}
+    - partID: FlyWings1
+      wheelSprite: {fileID: 21300000, guid: a44a6fb499164a049bb6ce1c756aeab8, type: 3}
+      buildSprite: {fileID: 21300000, guid: 7ac4738df47920d478a42563896020ff, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: ab0b714ded3939841b3f0313622f9a40, type: 3}
+    - partID: BeeWings2
+      wheelSprite: {fileID: 21300000, guid: b96978852382f90418d797ebdd034fd9, type: 3}
+      buildSprite: {fileID: 21300000, guid: 38f82d7feab5e2146af7c09f1e5daa2a, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: a917dd2bf275ba847b885d80c4b5cf36, type: 3}
+    - partID: FlyWings2
+      wheelSprite: {fileID: 21300000, guid: 288da53704dc34d4985ac9743d173d9b, type: 3}
+      buildSprite: {fileID: 21300000, guid: ae753df196013f44dacfe1570f17375e, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: b15ed9767c2757f4a9f7330a6e1462cf, type: 3}
+    - partID: FlyWings3
+      wheelSprite: {fileID: 21300000, guid: 7d607a06f75f8f24ab00f5cfc977bf81, type: 3}
+      buildSprite: {fileID: 21300000, guid: 0ad088e89da48c34f8bb9d599bf5065e, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 461aef62cf06a0e489ae0d2f6d8292af, type: 3}
+    - partID: WaspWings3
+      wheelSprite: {fileID: 21300000, guid: 7156ec5b99648a64f87f60b63f4a8c81, type: 3}
+      buildSprite: {fileID: 21300000, guid: f679665ed8065f446b4b1fc64bbed9bc, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 7047b67281890954e89755d45db9c209, type: 3}
+    - partID: BeeWings3
+      wheelSprite: {fileID: 21300000, guid: d2c358bb49fea514da9f1a0e9aebc3a8, type: 3}
+      buildSprite: {fileID: 21300000, guid: 2050c56fb7885d042b3aa18ff3293e74, type: 3}
       bugType: 1
-  tutorialController: {fileID: 0}
 --- !u!1 &194164384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,25 +1739,42 @@ MonoBehaviour:
   partData:
     partType: 0
     parts:
-    - sprite: {fileID: 21300000, guid: 9e1232a5f4587bf428e42993a0b11dde, type: 3}
+    - partID: WaspHead1
+      wheelSprite: {fileID: 21300000, guid: 0b93966d79df30644906e15a8485ebd3, type: 3}
+      buildSprite: {fileID: 21300000, guid: 0b93966d79df30644906e15a8485ebd3, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 683450917d2b00c469d2c103784bdf19, type: 3}
+    - partID: FlyHead1
+      wheelSprite: {fileID: 21300000, guid: 3ed69ec2b78f19d45bc83b0c9a994194, type: 3}
+      buildSprite: {fileID: 21300000, guid: 3ed69ec2b78f19d45bc83b0c9a994194, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 7b34b173c02731344a229dcd2465c8e0, type: 3}
+    - partID: WaspHead2
+      wheelSprite: {fileID: 21300000, guid: c3f61686e98325e43979ac79fdc3bf84, type: 3}
+      buildSprite: {fileID: 21300000, guid: c3f61686e98325e43979ac79fdc3bf84, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 898f2d90e59729e4abb85e4a9b253974, type: 3}
+    - partID: FlyHead2
+      wheelSprite: {fileID: 21300000, guid: 11411700f69054749b907b3d17a57be2, type: 3}
+      buildSprite: {fileID: 21300000, guid: 11411700f69054749b907b3d17a57be2, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 4a494cef6dbb3c246ac7c2516599c481, type: 3}
+    - partID: BeeHead1
+      wheelSprite: {fileID: 21300000, guid: d678b996b1fb8dd4f8a41fcb75e8ea7c, type: 3}
+      buildSprite: {fileID: 21300000, guid: d678b996b1fb8dd4f8a41fcb75e8ea7c, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 8d17e9bbe0f49314abf58b9636de0933, type: 3}
+    - partID: WaspHead3
+      wheelSprite: {fileID: 21300000, guid: e41539b58bcb91e4a8d26d0411f18756, type: 3}
+      buildSprite: {fileID: 21300000, guid: e41539b58bcb91e4a8d26d0411f18756, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 10c35d55c3a48224080161b66fdb1def, type: 3}
+    - partID: BeeHead2
+      wheelSprite: {fileID: 21300000, guid: afab9052c51c46241b9e8f6a4941336a, type: 3}
+      buildSprite: {fileID: 21300000, guid: afab9052c51c46241b9e8f6a4941336a, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: e0debf91faade4c43bce4d4613b7c69e, type: 3}
+    - partID: BeeHead3
+      wheelSprite: {fileID: 21300000, guid: 2a0395461b73073479c8aac36c98546f, type: 3}
+      buildSprite: {fileID: 21300000, guid: 2a0395461b73073479c8aac36c98546f, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 7a5a253834dda1d489a4f73902d1188b, type: 3}
+    - partID: FlyHead3
+      wheelSprite: {fileID: 21300000, guid: 5fb1b285f04dad54188b33d396567a62, type: 3}
+      buildSprite: {fileID: 21300000, guid: 5fb1b285f04dad54188b33d396567a62, type: 3}
       bugType: 0
-  tutorialController: {fileID: 0}
 --- !u!1 &198764021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,8 +2127,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 275, y: 449.7}
-  m_SizeDelta: {x: 800, y: 300}
+  m_AnchoredPosition: {x: 275, y: 340}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235091640
 MonoBehaviour:
@@ -2095,14 +2145,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 400, y: 700, z: 400, w: 100}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2269,8 +2319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 520.1}
-  m_SizeDelta: {x: 475.23, y: 181.02}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255532369
 MonoBehaviour:
@@ -2287,14 +2337,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 250, y: 450, z: 250, w: 70}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3034,6 +3084,10 @@ MonoBehaviour:
   - {fileID: -3028151342798083233, guid: 31fec6cf3615dcc4ca6de548a6fb4e5d, type: 3}
   - {fileID: 8120643045112960585, guid: 4efbedee2f45b42409c1fb3db95ad281, type: 3}
   - {fileID: -2944109630331816294, guid: 23f4308c09cea50418f949d717d5d86b, type: 3}
+  threeStarClip: {fileID: 8300000, guid: a0138c8a984e25f4282d0475d17be228, type: 3}
+  sixStarClip: {fileID: 8300000, guid: f0b027a9b88f7a14f872061dfc6085af, type: 3}
+  nineStarClip: {fileID: 8300000, guid: d6208bbc850170141b6b0ae91032eb37, type: 3}
+  tutorialPanel: {fileID: 0}
   wrongResultDuration: 2
   correctResultDuration: 2.5
   finishButton: {fileID: 1425645500}
@@ -3046,7 +3100,6 @@ MonoBehaviour:
   bodyWheel: {fileID: 7533398}
   legWheel: {fileID: 1539993659}
   wingWheel: {fileID: 179343168}
-  tutorialController: {fileID: 0}
   sfxPlayer: {fileID: 31363658}
   prompts:
   - promptImage: {fileID: 21300000, guid: 4b4370d4f2d605d4491d4c567097b0bd, type: 3}
@@ -4377,8 +4430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -938.23, y: -65.32}
-  m_SizeDelta: {x: 800, y: 1000}
+  m_AnchoredPosition: {x: -945, y: 0}
+  m_SizeDelta: {x: 1400, y: 1400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698523807
 MonoBehaviour:
@@ -4402,7 +4455,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4431,7 +4484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 2
-  tutorialController: {fileID: 0}
 --- !u!114 &698523810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6832,7 +6884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8234138217422965791, guid: bf5d056be7d3eca4d97989236620653b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7913,8 +7965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -943.7, y: 316.9}
-  m_SizeDelta: {x: 800, y: 300}
+  m_AnchoredPosition: {x: -940, y: 100}
+  m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243231605
 MonoBehaviour:
@@ -7931,14 +7983,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 400, y: 800, z: 400, w: 150}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7967,7 +8019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 0
-  tutorialController: {fileID: 0}
 --- !u!114 &1243231608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9097,7 +9148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.4505043, y: 1.5427094}
+  m_AnchoredPosition: {x: -5.3, y: 1.99}
   m_SizeDelta: {x: 2619.7, y: 1540.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466501286
@@ -10026,25 +10077,42 @@ MonoBehaviour:
   partData:
     partType: 2
     parts:
-    - sprite: {fileID: 21300000, guid: 66e4900696f02e549872f96bd41882f3, type: 3}
+    - partID: FlyLegs1
+      wheelSprite: {fileID: 21300000, guid: 25f2e7d35deb17846a3dd35eca27f6f0, type: 3}
+      buildSprite: {fileID: 21300000, guid: 923f2975fce10b14da9e6c6f7761842f, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: d5fe16a627752074f94c8e6db36da736, type: 3}
+    - partID: FlyLegs2
+      wheelSprite: {fileID: 21300000, guid: 5c0ce2965151c7a4d8c249b627960f0a, type: 3}
+      buildSprite: {fileID: 21300000, guid: 719b2f57179a5924eba7c4c86f8da2d7, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: e0ff14a221fae7041aa910b7d569198f, type: 3}
+    - partID: WaspLegs1
+      wheelSprite: {fileID: 21300000, guid: 307d5d8e7244c734387507007e2a6bd1, type: 3}
+      buildSprite: {fileID: 21300000, guid: 7503e9c72e8434044bcd376dddf631ea, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 23c4fa102198cd148b5275caebd5038b, type: 3}
+    - partID: WaspLegs2
+      wheelSprite: {fileID: 21300000, guid: 12bb3ee9a59229a4fa88c487513273ff, type: 3}
+      buildSprite: {fileID: 21300000, guid: d17ffd6e4616fba49a7704a69d9fed68, type: 3}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 44f603c825d0dc44a89677adfc0bcfd0, type: 3}
+    - partID: FlyLegs3
+      wheelSprite: {fileID: 21300000, guid: 7f85efc01c9a1c04dba5f051b08a8f53, type: 3}
+      buildSprite: {fileID: 21300000, guid: 6ef28956cb4b62044aaf242028112a7a, type: 3}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: edf20418f7694ae41bf3d020d16e2cfe, type: 3}
+    - partID: BeeLegs1
+      wheelSprite: {fileID: 21300000, guid: 83324fdc096aa46419e8e6b954ff0bc4, type: 3}
+      buildSprite: {fileID: 21300000, guid: 19eb418b222a41f4f961e6deb91355c1, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 9c9eb2802e5447e4d8b96f44d4edada3, type: 3}
+    - partID: BeeLegs2
+      wheelSprite: {fileID: 21300000, guid: e83949ae7fd45984d8c76c63173966b4, type: 3}
+      buildSprite: {fileID: 21300000, guid: 70ad7868ed786ff42b7495ce671fc7f9, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: abf7f509c0e8f244f997f63e774990fb, type: 3}
+    - partID: BeeLegs3
+      wheelSprite: {fileID: 21300000, guid: 5db11fa222789a9458e2e9e4c69b0281, type: 3}
+      buildSprite: {fileID: 21300000, guid: 4bea07deee758be44bd1f06e7ec69259, type: 3}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 109b797e1cc623a44b86c75057ffe9ac, type: 3}
+    - partID: WaspLegs3
+      wheelSprite: {fileID: 21300000, guid: 1b401208f3b51c64fb08c4bba7811938, type: 3}
+      buildSprite: {fileID: 21300000, guid: dd66b767023c46c42ae2774d34bd6b7f, type: 3}
       bugType: 2
-  tutorialController: {fileID: 0}
 --- !u!1 &1555166342
 GameObject:
   m_ObjectHideFlags: 0
@@ -10599,8 +10667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -938.23, y: -163.32}
-  m_SizeDelta: {x: 400, y: 900}
+  m_AnchoredPosition: {x: -940, y: -100}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719755475
 MonoBehaviour:
@@ -10624,7 +10692,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -10653,7 +10721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 1
-  tutorialController: {fileID: 0}
 --- !u!114 &1719755478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11314,8 +11381,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: 449.7}
-  m_SizeDelta: {x: 800, y: 300}
+  m_AnchoredPosition: {x: -275, y: 340}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941485164
 MonoBehaviour:
@@ -11332,7 +11399,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 400, y: 700, z: 400, w: 100}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

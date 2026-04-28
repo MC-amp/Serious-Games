@@ -3,6 +3,7 @@ using UnityEngine;
 public class SFXPlayer : MonoBehaviour
 {
     public AudioSource source;
+
     public AudioClip clickClip;
     public AudioClip correctClip;
     public AudioClip wrongClip;
@@ -23,5 +24,11 @@ public class SFXPlayer : MonoBehaviour
     {
         if (source != null && wrongClip != null)
             source.PlayOneShot(wrongClip);
+    }
+
+    public void PlayCustomSFX(AudioClip clip)
+    {
+        if (source != null && clip != null)
+            source.PlayOneShot(clip);
     }
 }

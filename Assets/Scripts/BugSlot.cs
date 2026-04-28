@@ -10,8 +10,6 @@ public class BugSlot : MonoBehaviour, IPointerClickHandler
 
     public BugPartOption EquippedPart { get; private set; }
 
-    public BugTutorialController tutorialController;
-
     void Awake()
     {
         image = GetComponent<Image>();
@@ -23,7 +21,14 @@ public class BugSlot : MonoBehaviour, IPointerClickHandler
     public void SetPart(BugPartOption part)
     {
         EquippedPart = part;
-        image.sprite = part.sprite;
+
+        if (part == null)
+        {
+            ClearSlot();
+            return;
+        }
+
+        image.sprite = part.buildSprite;
         image.enabled = true;
     }
 
@@ -41,12 +46,6 @@ public class BugSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        bool hadPart = EquippedPart != null;
         ClearSlot();
-
-        if (hadPart && tutorialController != null && partType == PartType.Head)
-        {
-            tutorialController.NotifyHeadSlotRemoved();
-        }
     }
 }

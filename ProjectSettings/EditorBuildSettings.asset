@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Learn.unity
     guid: c75fd0aeac447034abcf9fe41db37b84
+  - enabled: 1
+    path: Assets/Scenes/Freeplay.unity
+    guid: 8a6341b2855ce224199483fc6992a294
+  - enabled: 1
+    path: Assets/Scenes/Certificate.unity
+    guid: 5b47cb41cf31f9840b7d23938d901d66
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
