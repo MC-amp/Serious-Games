@@ -9742,7 +9742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   hoverClip: {fileID: 8300000, guid: 7d03c0347e8ef684b9fd7784ea792642, type: 3}
-  clickClip: {fileID: 8300000, guid: 9ad17d4b6e64316478a9ffb7a560f105, type: 3}
+  clickClip: {fileID: 8300000, guid: 34c4686396c03604bb155109c6c1f5e5, type: 3}
   hoverVolume: 1
   clickVolume: 1
   hoverPitchMin: 0.95
