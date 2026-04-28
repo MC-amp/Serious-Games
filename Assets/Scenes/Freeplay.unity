@@ -256,25 +256,42 @@ MonoBehaviour:
   partData:
     partType: 1
     parts:
-    - sprite: {fileID: 21300000, guid: f2bb79d4fc69408498629f6e96fdabca, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: a97183fabbda63c4a984fb6b41dee645, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 72225d686d7353447a732244ae2f8156, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 43c2fb4e4636c8842b5600742b7008c2, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 53894a08600280f4baa56fe2e54b604d, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 7f4f0dac311ffef4eb705c44407aa72d, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: c45999cf9b77d4e47a5476070d1ec7e5, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: a3d0afb22d3254441915d310595dcbfa, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 7ef0b3e522cf4564bac6e06edf4a17e4, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-  tutorialController: {fileID: 0}
 --- !u!1 &8665956
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 3
-  tutorialController: {fileID: 0}
 --- !u!114 &26706943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,25 +1210,42 @@ MonoBehaviour:
   partData:
     partType: 3
     parts:
-    - sprite: {fileID: 21300000, guid: 3087673d521b3a042be534bd4d9cda4c, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 23f4347319e0dd64bb397fbf18e655d5, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 0f41d70d733ea5b4284f0b6e1519327e, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 6e361a11335b288488573e269e563c48, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: ab0b714ded3939841b3f0313622f9a40, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: a917dd2bf275ba847b885d80c4b5cf36, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: b15ed9767c2757f4a9f7330a6e1462cf, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 461aef62cf06a0e489ae0d2f6d8292af, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 7047b67281890954e89755d45db9c209, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-  tutorialController: {fileID: 0}
 --- !u!1 &189505315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,25 +1529,42 @@ MonoBehaviour:
   partData:
     partType: 0
     parts:
-    - sprite: {fileID: 21300000, guid: 9e1232a5f4587bf428e42993a0b11dde, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 683450917d2b00c469d2c103784bdf19, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 7b34b173c02731344a229dcd2465c8e0, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 898f2d90e59729e4abb85e4a9b253974, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: 4a494cef6dbb3c246ac7c2516599c481, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 8d17e9bbe0f49314abf58b9636de0933, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 10c35d55c3a48224080161b66fdb1def, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: e0debf91faade4c43bce4d4613b7c69e, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 7a5a253834dda1d489a4f73902d1188b, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-  tutorialController: {fileID: 0}
 --- !u!1 &198764021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,7 +2855,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 2
-  tutorialController: {fileID: 0}
 --- !u!114 &698523810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5132,7 +5181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 0
-  tutorialController: {fileID: 0}
 --- !u!114 &1243231608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5944,7 +5992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   hoverClip: {fileID: 8300000, guid: 7d03c0347e8ef684b9fd7784ea792642, type: 3}
-  clickClip: {fileID: 8300000, guid: 9ad17d4b6e64316478a9ffb7a560f105, type: 3}
+  clickClip: {fileID: 8300000, guid: 34c4686396c03604bb155109c6c1f5e5, type: 3}
   hoverVolume: 1
   clickVolume: 1
   hoverPitchMin: 0.95
@@ -6217,25 +6265,42 @@ MonoBehaviour:
   partData:
     partType: 2
     parts:
-    - sprite: {fileID: 21300000, guid: 66e4900696f02e549872f96bd41882f3, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: d5fe16a627752074f94c8e6db36da736, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: e0ff14a221fae7041aa910b7d569198f, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 23c4fa102198cd148b5275caebd5038b, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-    - sprite: {fileID: 21300000, guid: 44f603c825d0dc44a89677adfc0bcfd0, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 0
-    - sprite: {fileID: 21300000, guid: edf20418f7694ae41bf3d020d16e2cfe, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 9c9eb2802e5447e4d8b96f44d4edada3, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: abf7f509c0e8f244f997f63e774990fb, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 1
-    - sprite: {fileID: 21300000, guid: 109b797e1cc623a44b86c75057ffe9ac, type: 3}
+    - partID: 
+      wheelSprite: {fileID: 0}
+      buildSprite: {fileID: 0}
       bugType: 2
-  tutorialController: {fileID: 0}
 --- !u!1 &1555166342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6720,7 +6785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BugSlot
   partType: 1
-  tutorialController: {fileID: 0}
 --- !u!114 &1719755478
 MonoBehaviour:
   m_ObjectHideFlags: 0
