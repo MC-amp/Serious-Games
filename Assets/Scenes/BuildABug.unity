@@ -3135,6 +3135,7 @@ MonoBehaviour:
     correctBugType: 1
   - promptImage: {fileID: 21300000, guid: 72e827e9ffd68dd448cf78b3f96b7b27, type: 3}
     correctBugType: 2
+  compendiumReminder: {fileID: 1813726023}
 --- !u!1 &412023473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,11 +7102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7371795250282758022, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 291.4504
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 7371795250282758022, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.558428
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7371795250282758022, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11176,6 +11177,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773213630}
   m_CullTransparentMesh: 1
+--- !u!114 &1813726023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
+  m_PrefabInstance: {fileID: 1036117767}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e19c984e80164a4ca251a56aa425ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompendiumReminderController
 --- !u!1 &1830185023
 GameObject:
   m_ObjectHideFlags: 0

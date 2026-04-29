@@ -63,6 +63,9 @@ public class BugBuildGameManager : MonoBehaviour
     [Header("Bug Prompts")]
     public List<BugPrompt> prompts;
 
+    [Header("Compendium Reminder")]
+    public CompendiumReminderController compendiumReminder;
+
     private int currentPromptIndex = 0;
     private bool isChecking = false;
 
@@ -287,7 +290,15 @@ void Update()
             else
                 sfxPlayer.PlayWrong();
         }
+
+    if (compendiumReminder != null)
+    {
+    if (isCorrect)
+        compendiumReminder.RegisterCorrect();
+    else
+        compendiumReminder.RegisterWrong();
     }
+        }
 
     private void HideResult()
     {
