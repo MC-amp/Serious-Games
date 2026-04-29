@@ -38,6 +38,9 @@ public class AnswerButton : MonoBehaviour
     [Header("Toggle Reset")]
     public List<Toggle> exemptToggles = new List<Toggle>();
 
+    [Header("Compendium Reminder")]
+    public CompendiumReminderController compendiumReminder;
+
     private Button button;
 
     private const float LOCK_ANSWER_SECONDS = 2f;
@@ -82,6 +85,9 @@ public class AnswerButton : MonoBehaviour
 
         if (isCorrect)
         {
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterCorrect();
+
             PlaySfx(correctClip);
 
             GameObject selected = InsectSelectionManager.Instance.currentlySelected;
@@ -104,6 +110,9 @@ public class AnswerButton : MonoBehaviour
         }
         else
         {
+            if (compendiumReminder != null)
+                compendiumReminder.RegisterWrong();
+
             PlaySfx(wrongClip);
 
             if (wrongGroup != null)
@@ -145,20 +154,20 @@ public class AnswerButton : MonoBehaviour
     }
 
     private float GetSavedUIVolume()
-{
-    return PlayerPrefs.GetFloat("UIVolume", 1f);
-}
+    {
+        return PlayerPrefs.GetFloat("UIVolume", 1f);
+    }
 
-void PlaySfx(AudioClip clip)
-{
-    if (UIButtonSFX.suppressSfx)
-        return;
+    void PlaySfx(AudioClip clip)
+    {
+        if (UIButtonSFX.suppressSfx)
+            return;
 
-    if (audioSource == null || clip == null)
-        return;
+        if (audioSource == null || clip == null)
+            return;
 
-    audioSource.PlayOneShot(clip, GetSavedUIVolume());
-}
+        audioSource.PlayOneShot(clip, GetSavedUIVolume());
+    }
 
     IEnumerator ShowAndFade(CanvasGroup group)
     {

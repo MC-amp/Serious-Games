@@ -4850,6 +4850,7 @@ MonoBehaviour:
   exemptToggles:
   - {fileID: 868424487}
   - {fileID: 1389664026}
+  compendiumReminder: {fileID: 1682146167}
 --- !u!114 &254237271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5206,6 +5207,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &279438375
 Animator:
   serializedVersion: 7
@@ -5459,6 +5461,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283777689}
   m_CullTransparentMesh: 1
+--- !u!1001 &295507726
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 309506424}
+    m_Modifications:
+    - target: {fileID: 4106401322846439331, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_Name
+      value: ReminderID
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9720
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014784549901830346, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+      propertyPath: compendiumOpenButton
+      value: 
+      objectReference: {fileID: 1279395719}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
 --- !u!1 &302859096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5894,6 +5997,7 @@ RectTransform:
   m_Children:
   - {fileID: 526379859}
   - {fileID: 214126281}
+  - {fileID: 2144835833}
   m_Father: {fileID: 1368382717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8467,6 +8571,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &402182272
 Animator:
   serializedVersion: 7
@@ -10487,6 +10592,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &497262825
 Animator:
   serializedVersion: 7
@@ -12091,6 +12197,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &586106810
 Animator:
   serializedVersion: 7
@@ -15525,6 +15632,7 @@ MonoBehaviour:
   exemptToggles:
   - {fileID: 868424487}
   - {fileID: 1389664026}
+  compendiumReminder: {fileID: 1682146167}
 --- !u!114 &761636637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19984,6 +20092,7 @@ MonoBehaviour:
   exemptToggles:
   - {fileID: 868424487}
   - {fileID: 1389664026}
+  compendiumReminder: {fileID: 1682146167}
 --- !u!114 &957663459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21037,6 +21146,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &1010990209
 Animator:
   serializedVersion: 7
@@ -25328,6 +25438,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &1265892985
 Animator:
   serializedVersion: 7
@@ -25558,6 +25669,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1279395719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8658744002250433703, guid: f7db077ddfbc3a54bb8cba83de1712be, type: 3}
+  m_PrefabInstance: {fileID: 155250751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1284577833
 GameObject:
   m_ObjectHideFlags: 0
@@ -26369,6 +26491,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &1311278117
 Animator:
   serializedVersion: 7
@@ -33941,6 +34064,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &1658956545
 Animator:
   serializedVersion: 7
@@ -34133,6 +34257,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676036075}
   m_CullTransparentMesh: 1
+--- !u!114 &1682146167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9014784549901830346, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+  m_PrefabInstance: {fileID: 295507726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e19c984e80164a4ca251a56aa425ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompendiumReminderController
 --- !u!1 &1687271769
 GameObject:
   m_ObjectHideFlags: 0
@@ -37246,6 +37381,7 @@ MonoBehaviour:
   exitAnimationName: Exit
   rankSystem: {fileID: 1622783385}
   exemptToggles: []
+  compendiumReminder: {fileID: 0}
 --- !u!95 &1810788437
 Animator:
   serializedVersion: 7
@@ -44252,6 +44388,11 @@ Transform:
   - {fileID: 1611793234}
   m_Father: {fileID: 850914318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2144835833 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7772474531760794086, guid: c4f7e9a46034da34bb1adbda3e425ff3, type: 3}
+  m_PrefabInstance: {fileID: 295507726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ MonoBehaviour:
     width: 3440
     height: 1349
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -771,135 +771,32 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 57510
+      - m_Data: -17680
       m_LastClickedID:
-        m_Data: 0
+        m_Data: -17680
       m_ExpandedIDs:
-      - m_Data: -135318
-      - m_Data: -133742
-      - m_Data: -131518
-      - m_Data: -128176
-      - m_Data: -126584
-      - m_Data: -124220
-      - m_Data: -123430
-      - m_Data: -123428
-      - m_Data: -115558
-      - m_Data: -115556
-      - m_Data: -114506
-      - m_Data: -109460
-      - m_Data: -100182
-      - m_Data: -98546
-      - m_Data: -94878
-      - m_Data: -89288
-      - m_Data: -87102
-      - m_Data: -82468
-      - m_Data: -80856
-      - m_Data: -78444
-      - m_Data: -74518
-      - m_Data: -74270
-      - m_Data: -71254
-      - m_Data: -68332
-      - m_Data: -65248
-      - m_Data: -65000
-      - m_Data: -62542
-      - m_Data: -60666
-      - m_Data: -48748
-      - m_Data: -48490
-      - m_Data: -48488
-      - m_Data: -47486
-      - m_Data: -45536
-      - m_Data: -34502
-      - m_Data: -32556
-      - m_Data: -32544
-      - m_Data: -32298
-      - m_Data: -32296
-      - m_Data: -19856
-      - m_Data: -19170
-      - m_Data: -18020
-      - m_Data: -18008
-      - m_Data: -17760
-      - m_Data: -16542
-      - m_Data: -16530
-      - m_Data: -16528
-      - m_Data: -15934
-      - m_Data: -13064
-      - m_Data: -13052
-      - m_Data: -13050
-      - m_Data: -6454
-      - m_Data: -6452
-      - m_Data: -1508
-      - m_Data: -12
-      - m_Data: 68304
-      - m_Data: 70066
-      - m_Data: 71056
-      - m_Data: 71378
-      - m_Data: 79852
-      - m_Data: 80612
-      - m_Data: 81466
-      - m_Data: 83478
-      - m_Data: 83508
-      - m_Data: 83562
-      - m_Data: 90322
-      - m_Data: 90706
-      - m_Data: 91544
-      - m_Data: 105668
-      - m_Data: 113432
-      - m_Data: 113646
-      - m_Data: 115410
-      - m_Data: 115446
-      - m_Data: 115508
-      - m_Data: 115818
-      - m_Data: 115830
-      - m_Data: 116466
-      - m_Data: 116576
-      - m_Data: 116588
-      - m_Data: 116790
-      - m_Data: 117244
-      - m_Data: 118696
-      - m_Data: 118732
-      - m_Data: 118794
-      - m_Data: 119104
-      - m_Data: 119116
-      - m_Data: 128330
-      - m_Data: 128434
-      - m_Data: 128710
-      - m_Data: 132156
-      - m_Data: 137332
-      - m_Data: 137436
-      - m_Data: 143856
-      - m_Data: 144944
-      - m_Data: 150598
-      - m_Data: 150704
-      - m_Data: 156486
-      - m_Data: 156512
-      - m_Data: 156826
-      - m_Data: 177126
-      - m_Data: 177206
-      - m_Data: 177706
-      - m_Data: 179596
-      - m_Data: 185340
-      - m_Data: 185950
-      - m_Data: 186030
-      - m_Data: 186342
-      - m_Data: 186530
-      - m_Data: 186614
-      - m_Data: 187108
-      - m_Data: 187330
-      - m_Data: 187682
-      - m_Data: 187828
-      - m_Data: 187860
-      - m_Data: 187942
-      - m_Data: 187958
-      - m_Data: 199234
-      - m_Data: 200908
-      - m_Data: 207440
-      - m_Data: 207544
-      - m_Data: 210182
-      - m_Data: 211268
+      - m_Data: -17648
+      - m_Data: -17148
+      - m_Data: -14330
+      - m_Data: -11912
+      - m_Data: -10002
+      - m_Data: -9748
+      - m_Data: -9746
+      - m_Data: -5868
+      - m_Data: -1782
+      - m_Data: -1526
+      - m_Data: -1524
+      - m_Data: 61294
+      - m_Data: 69420
+      - m_Data: 71188
+      - m_Data: 83124
+      - m_Data: 91556
+      - m_Data: 93326
+      - m_Data: 94646
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Completed (1)
-        m_OriginalName: Completed (1)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -907,10 +804,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: -91288
+          m_Data: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 11}
@@ -1600,9 +1497,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1.564698, y: -0.115740344, z: 1.5351818}
+    m_Target: {x: 23.248074, y: 5.0038595, z: 0.5124204}
     speed: 2
-    m_Value: {x: 1.564698, y: -0.115740344, z: 1.5351818}
+    m_Value: {x: 23.248074, y: 5.0038595, z: 0.5124204}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1652,9 +1549,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.6122565
+    m_Target: 15.135844
     speed: 2
-    m_Value: 5.6122565
+    m_Value: 15.135844
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2036,7 +1933,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Packages/com.unity.collab-proxy/Editor/Configuration
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2046,31 +1943,33 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Packages/com.unity.collab-proxy/Editor/Configuration
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\blueb\Documents\GitHub\Serious-Games
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 124}
+    scrollPos: {x: 0, y: 664}
     m_SelectedIDs:
-    - m_Data: 62576
+    - m_Data: 63876
     m_LastClickedID:
-      m_Data: 62576
+      m_Data: 63876
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62352
-    - m_Data: 62356
-    - m_Data: 62358
-    - m_Data: 62360
-    - m_Data: 62652
+    - m_Data: 63368
+    - m_Data: 63370
+    - m_Data: 63372
+    - m_Data: 63374
+    - m_Data: 63376
+    - m_Data: 63664
+    - m_Data: 63878
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scripts
-      m_OriginalName: Scripts
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -2078,10 +1977,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 62578
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 13}
@@ -2099,11 +1998,11 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62352
-    - m_Data: 62354
-    - m_Data: 62356
-    - m_Data: 62358
-    - m_Data: 62360
+    - m_Data: 63368
+    - m_Data: 63370
+    - m_Data: 63372
+    - m_Data: 63374
+    - m_Data: 63376
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2131,8 +2030,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 57510
-    m_LastClickedInstanceID: 57510
+    - m_Data: -17680
+    m_LastClickedInstanceID: -17680
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 50780
@@ -2251,9 +2150,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 974
+    y: 998
     width: 2910
-    height: 372
+    height: 348
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
