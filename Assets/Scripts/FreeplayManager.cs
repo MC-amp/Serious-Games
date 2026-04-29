@@ -18,6 +18,9 @@ public class FreeplayManager : MonoBehaviour
     public Button finishButton;
     public TextMeshProUGUI resultText;
 
+    [Header("Audio")]
+    public SFXPlayer sfxPlayer;
+
     [Header("Result Names - Pure")]
     [TextArea] public string pureBeeResult = "You built a Pure Bee!";
     [TextArea] public string pureFlyResult = "You built a Pure Fly!";
@@ -192,6 +195,7 @@ public class FreeplayManager : MonoBehaviour
         {
             resultText.text = emptyBuildResult;
             resultText.gameObject.SetActive(true);
+            PlayWrongSfx();
             return;
         }
 
@@ -200,6 +204,19 @@ public class FreeplayManager : MonoBehaviour
 
         resultText.text = result;
         resultText.gameObject.SetActive(true);
+        PlayCorrectSfx();
+    }
+
+    private void PlayCorrectSfx()
+    {
+        if (sfxPlayer != null)
+            sfxPlayer.PlayCorrect();
+    }
+
+    private void PlayWrongSfx()
+    {
+        if (sfxPlayer != null)
+            sfxPlayer.PlayWrong();
     }
 
     private int GetTotalPlacedParts(Dictionary<string, int> speciesCounts)

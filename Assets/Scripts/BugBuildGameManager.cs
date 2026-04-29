@@ -303,7 +303,15 @@ public class BugBuildGameManager : MonoBehaviour
             else
                 sfxPlayer.PlayWrong();
         }
+
+    if (compendiumReminder != null)
+    {
+    if (isCorrect)
+        compendiumReminder.RegisterCorrect();
+    else
+        compendiumReminder.RegisterWrong();
     }
+        }
 
     private void HideResult()
     {

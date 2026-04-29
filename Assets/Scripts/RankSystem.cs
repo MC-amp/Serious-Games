@@ -26,23 +26,29 @@ public class RankSystem : MonoBehaviour
     public List<RankEntry> ranks = new List<RankEntry>();
 
     [Header("Audio")]
-    public AudioSource audioSource;
+    [Tooltip("Drag the scene's SFXPlayer here so rank unlock sounds use the shared SFX volume system.")]
+    public SFXPlayer sfxPlayer;
 
     [Header("Progress")]
     [SerializeField] private int correctSolvedCount = 0;
 
     public int CorrectSolvedCount => correctSolvedCount;
 
+    private void Awake()
+    {
+        if (sfxPlayer == null)
+            sfxPlayer = FindObjectOfType<SFXPlayer>();
+    }
+
     private void Start()
     {
-        ResetVisualState();
-
-        if (GlobalProgressManager.Instance != null)
+        foreach (var rank in ranks)
         {
-            correctSolvedCount = GlobalProgressManager.Instance.IdentifyCorrectCount;
-        }
+            if (rank.rankObject != null)
+                rank.rankObject.SetActive(false);
 
-        CheckRanks();
+            rank.hasActivated = false;
+        }
     }
 
     public void AddCorrectAnswer()
@@ -54,11 +60,7 @@ public class RankSystem : MonoBehaviour
     public void ResetRanks()
     {
         correctSolvedCount = 0;
-        ResetVisualState();
-    }
 
-    private void ResetVisualState()
-    {
         foreach (var rank in ranks)
         {
             rank.hasActivated = false;
@@ -90,7 +92,18 @@ public class RankSystem : MonoBehaviour
         if (rank.rankObject != null)
             rank.rankObject.SetActive(true);
 
-        if (rank.activationSfx != null && audioSource != null)
-            audioSource.PlayOneShot(rank.activationSfx);
+        PlayRankSfx(rank.activationSfx);
+    }
+
+    private void PlayRankSfx(AudioClip clip)
+    {
+        if (clip == null)
+            return;
+
+        if (sfxPlayer == null)
+            sfxPlayer = FindObjectOfType<SFXPlayer>();
+
+        if (sfxPlayer != null)
+            sfxPlayer.PlayCustomSFX(clip);
     }
 }

@@ -8,27 +8,32 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip correctClip;
     public AudioClip wrongClip;
 
+    private float GetSavedUIVolume()
+    {
+        return PlayerPrefs.GetFloat("UIVolume", 1f);
+    }
+
     public void PlayClick()
     {
         if (source != null && clickClip != null)
-            source.PlayOneShot(clickClip);
+            source.PlayOneShot(clickClip, GetSavedUIVolume());
     }
 
     public void PlayCorrect()
     {
         if (source != null && correctClip != null)
-            source.PlayOneShot(correctClip);
+            source.PlayOneShot(correctClip, GetSavedUIVolume());
     }
 
     public void PlayWrong()
     {
         if (source != null && wrongClip != null)
-            source.PlayOneShot(wrongClip);
+            source.PlayOneShot(wrongClip, GetSavedUIVolume());
     }
 
     public void PlayCustomSFX(AudioClip clip)
     {
         if (source != null && clip != null)
-            source.PlayOneShot(clip);
+            source.PlayOneShot(clip, GetSavedUIVolume());
     }
 }

@@ -8,7 +8,7 @@ public class AnswerButton : MonoBehaviour
     [Header("Tags")]
     public string answerTag;
 
-    [Header("Right or Wrong")]
+    [Header("Right or Wröng")]
     public CanvasGroup correctGroup;
     public CanvasGroup wrongGroup;
 
@@ -42,6 +42,7 @@ public class AnswerButton : MonoBehaviour
     public CompendiumReminderController compendiumReminder;
 
     private Button button;
+
     private const float LOCK_ANSWER_SECONDS = 2f;
 
     private void Awake()
@@ -58,19 +59,10 @@ public class AnswerButton : MonoBehaviour
 
     void TurnOffAllToggles()
     {
-        Toggle[] toggles = FindObjectsByType<Toggle>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None
-        );
+        Toggle[] toggles = FindObjectsOfType<Toggle>(true);
 
         foreach (Toggle toggle in toggles)
         {
-            if (toggle == null) continue;
-
-            // CHANGED: do not let answer reset affect settings reminder toggle
-            if (toggle.GetComponent<DoNotResetToggle>() != null)
-                continue;
-
             if (exemptToggles.Contains(toggle))
                 continue;
 
@@ -89,7 +81,7 @@ public class AnswerButton : MonoBehaviour
 
         StopAllCoroutines();
 
-        bool isCorrect = selectedTag == answerTag;
+        bool isCorrect = (selectedTag == answerTag);
 
         if (isCorrect)
         {
@@ -103,7 +95,9 @@ public class AnswerButton : MonoBehaviour
             {
                 IdentifyBugState bugState = selected.GetComponent<IdentifyBugState>();
                 if (bugState != null)
+                {
                     bugState.MarkSolved();
+                }
             }
 
             if (rankSystem != null)
@@ -159,10 +153,20 @@ public class AnswerButton : MonoBehaviour
             insectBtn.PlayFlyAwayAndDisable(flyAwayUsesAnimationEvent);
     }
 
+    private float GetSavedUIVolume()
+    {
+        return PlayerPrefs.GetFloat("UIVolume", 1f);
+    }
+
     void PlaySfx(AudioClip clip)
     {
-        if (audioSource != null && clip != null)
-            audioSource.PlayOneShot(clip);
+        if (UIButtonSFX.suppressSfx)
+            return;
+
+        if (audioSource == null || clip == null)
+            return;
+
+        audioSource.PlayOneShot(clip, GetSavedUIVolume());
     }
 
     IEnumerator ShowAndFade(CanvasGroup group)

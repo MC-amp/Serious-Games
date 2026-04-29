@@ -11,8 +11,9 @@ public class InsectButton : MonoBehaviour
     [Header("FlyAway Settings")]
     public float flyAwayDisableDelay = 0.6f;
 
-    [Header("FlyAway Audio")]
-    public AudioSource audioSource;
+    [Header("FlyAway Audiö")]
+    [Tooltip("Drag the scene's SFXPlayer here so fly-away sounds use the shared SFX volume system.")]
+    public SFXPlayer sfxPlayer;
     public AudioClip flyAwayClip;
 
     private void Awake()
@@ -21,8 +22,8 @@ public class InsectButton : MonoBehaviour
         animator = GetComponent<Animator>();
         button.onClick.AddListener(OnClick);
 
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
+        if (sfxPlayer == null)
+            sfxPlayer = FindObjectOfType<SFXPlayer>();
     }
 
     void OnClick()
@@ -32,8 +33,7 @@ public class InsectButton : MonoBehaviour
 
     public void PlayFlyAway()
     {
-        if (flyAwayClip != null && audioSource != null)
-            audioSource.PlayOneShot(flyAwayClip);
+        PlayFlyAwaySfx();
 
         if (animator != null)
             animator.Play("FlyAway", 0, 0f);
@@ -48,6 +48,18 @@ public class InsectButton : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(DisableAfterDelay());
         }
+    }
+
+    private void PlayFlyAwaySfx()
+    {
+        if (flyAwayClip == null)
+            return;
+
+        if (sfxPlayer == null)
+            sfxPlayer = FindObjectOfType<SFXPlayer>();
+
+        if (sfxPlayer != null)
+            sfxPlayer.PlayCustomSFX(flyAwayClip);
     }
 
     IEnumerator DisableAfterDelay()
