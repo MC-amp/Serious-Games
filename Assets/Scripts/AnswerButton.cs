@@ -144,11 +144,21 @@ public class AnswerButton : MonoBehaviour
             insectBtn.PlayFlyAwayAndDisable(flyAwayUsesAnimationEvent);
     }
 
-    void PlaySfx(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-            audioSource.PlayOneShot(clip);
-    }
+    private float GetSavedUIVolume()
+{
+    return PlayerPrefs.GetFloat("UIVolume", 1f);
+}
+
+void PlaySfx(AudioClip clip)
+{
+    if (UIButtonSFX.suppressSfx)
+        return;
+
+    if (audioSource == null || clip == null)
+        return;
+
+    audioSource.PlayOneShot(clip, GetSavedUIVolume());
+}
 
     IEnumerator ShowAndFade(CanvasGroup group)
     {

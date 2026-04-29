@@ -245,11 +245,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab927d44536b2047b8998cbc706168c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FullCompletionRewardDisplay
-  activationDelay: 0
-  objectsToEnable:
+  currentGame: 0
+  firstGameCompletedObjects: []
+  secondGameCompletedObjects: []
+  fullCompletionObjects:
   - {fileID: 1731090468}
-  objectsToDisable:
+  fullCompletionObjectsToTurnOff:
   - {fileID: 290008299}
+  objectsToTurnOff: []
+  refreshWhenProgressChanges: 1
 --- !u!114 &115979537
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,12 +3,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Selectable))]
-public class UIButtonSFX : MonoBehaviour,
-    IPointerEnterHandler,
-    ISelectHandler
+public class UIButtonSFX : MonoBehaviour, IPointerEnterHandler, ISelectHandler
 {
     public static bool suppressSfx = false;
-    
+
     [Header("Audio Clips")]
     public AudioClip hoverClip;
     public AudioClip clickClip;
@@ -31,7 +29,6 @@ public class UIButtonSFX : MonoBehaviour,
 
     private static AudioSource uiAudioSource;
 
-    private Selectable selectable;
     private Button button;
     private Toggle toggle;
 
@@ -39,7 +36,6 @@ public class UIButtonSFX : MonoBehaviour,
 
     private void Awake()
     {
-        selectable = GetComponent<Selectable>();
         button = GetComponent<Button>();
         toggle = GetComponent<Toggle>();
 
@@ -75,31 +71,38 @@ public class UIButtonSFX : MonoBehaviour,
         PlayClick();
     }
 
+    // CHANGED: reads the UI volume saved by the settings slider
+    private float GetSavedUIVolume()
+    {
+        return PlayerPrefs.GetFloat("UIVolume", 1f);
+    }
+
     private void PlayHover()
-{
-    if (suppressSfx) return;
+    {
+        if (suppressSfx) return;
+        if (hoverClip == null || uiAudioSource == null) return;
 
-    if (hoverClip == null || uiAudioSource == null)
-        return;
+        if (Time.unscaledTime - lastHoverTime < hoverCooldown)
+            return;
 
-    if (Time.unscaledTime - lastHoverTime < hoverCooldown)
-        return;
+        lastHoverTime = Time.unscaledTime;
 
-    lastHoverTime = Time.unscaledTime;
+        uiAudioSource.pitch = Random.Range(hoverPitchMin, hoverPitchMax);
 
-    uiAudioSource.pitch = Random.Range(hoverPitchMin, hoverPitchMax);
-    uiAudioSource.PlayOneShot(hoverClip, hoverVolume);
-    uiAudioSource.pitch = 1f;
-}
+        // CHANGED: hover sound now uses the settings UI volume
+        uiAudioSource.PlayOneShot(hoverClip, hoverVolume * GetSavedUIVolume());
 
-private void PlayClick()
-{
-    if (suppressSfx) return;
+        uiAudioSource.pitch = 1f;
+    }
 
-    if (clickClip == null || uiAudioSource == null)
-        return;
+    private void PlayClick()
+    {
+        if (suppressSfx) return;
+        if (clickClip == null || uiAudioSource == null) return;
 
-    uiAudioSource.pitch = 1f;
-    uiAudioSource.PlayOneShot(clickClip, clickVolume);
-}
+        uiAudioSource.pitch = 1f;
+
+        // CHANGED: click sound now uses the settings UI volume
+        uiAudioSource.PlayOneShot(clickClip, clickVolume * GetSavedUIVolume());
+    }
 }

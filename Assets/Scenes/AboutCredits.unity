@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4256450586650079475, guid: 55f1c1505efd87040958c0fc98cc1dd1, type: 3}
+  m_Sprite: {fileID: 3158009985917759923, guid: db75ef61dce536c44b0003f0e55846f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -971,7 +971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18, y: -417}
+  m_AnchoredPosition: {x: 162, y: -593}
   m_SizeDelta: {x: 374.11, y: 99.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063322751
@@ -986,11 +986,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab927d44536b2047b8998cbc706168c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FullCompletionRewardDisplay
-  activationDelay: 0
-  objectsToEnable:
+  currentGame: 0
+  firstGameCompletedObjects: []
+  secondGameCompletedObjects: []
+  fullCompletionObjects:
   - {fileID: 1013936075}
-  objectsToDisable:
-  - {fileID: 0}
+  objectsToTurnOff: []
+  refreshWhenProgressChanges: 1
 --- !u!114 &1063322752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,11 +1593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2134
+      value: -1577
       objectReference: {fileID: 0}
     - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 967
+      value: 1001
       objectReference: {fileID: 0}
     - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -1634,7 +1636,8 @@ PrefabInstance:
       value: AudioSettingsUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2679280989051677359, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}

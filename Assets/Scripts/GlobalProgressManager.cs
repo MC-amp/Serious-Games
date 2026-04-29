@@ -9,21 +9,28 @@ public class GlobalProgressManager : MonoBehaviour
 
     public static event Action OnProgressChanged;
 
+    public enum GameId
+    {
+        Identify,
+        BuildABug
+    }
+
     [Header("Glöbal Progress")]
     [SerializeField] private int identifyCorrectCount = 0;
     [SerializeField] private int buildABugCorrectCount = 0;
 
-    [Header("Full Completion")]
-    [Tooltip("How many Identify bugs must be solved before the final completion asset can turn on.")]
+    [Header("Game Completion Requirements")]
+    [Tooltip("How many Identify bugs must be solved before Identify counts as complete.")]
     public int identifyRequiredForCompletion = 9;
 
-    [Tooltip("How many Build-A-Bug bugs must be solved before the final completion asset can turn on.")]
+    [Tooltip("How many Build-A-Bug bugs must be solved before Build-A-Bug counts as complete.")]
     public int buildABugRequiredForCompletion = 9;
 
-    [Tooltip("The object that turns on once both games are fully solved.")]
+    [Header("Optional Full Completion Asset")]
+    [Tooltip("Optional object that turns on once both games are fully solved. Usually this only works if the object lives in the same scene as this manager.")]
     public GameObject fullCompletionAsset;
 
-    [Tooltip("How long to wait after both games are complete before turning on the full completion asset.")]
+    [Tooltip("How long to wait after both games are complete before turning on the optional full completion asset.")]
     public float fullCompletionDelay = 1f;
 
     private bool fullCompletionActivated = false;
@@ -38,6 +45,26 @@ public class GlobalProgressManager : MonoBehaviour
     public int IdentifyCorrectCount => identifyCorrectCount;
     public int BuildABugCorrectCount => buildABugCorrectCount;
     public int TotalCorrectCount => identifyCorrectCount + buildABugCorrectCount;
+
+    public bool IsIdentifyComplete => identifyCorrectCount >= identifyRequiredForCompletion;
+    public bool IsBuildABugComplete => buildABugCorrectCount >= buildABugRequiredForCompletion;
+    public bool IsFullyComplete => IsIdentifyComplete && IsBuildABugComplete;
+
+    public int CompletedGameCount
+    {
+        get
+        {
+            int count = 0;
+
+            if (IsIdentifyComplete)
+                count++;
+
+            if (IsBuildABugComplete)
+                count++;
+
+            return count;
+        }
+    }
 
     private void Awake()
     {
@@ -89,6 +116,66 @@ public class GlobalProgressManager : MonoBehaviour
     {
         buildABugCorrectCount = Mathf.Max(0, value);
         NotifyProgressChanged();
+    }
+
+    public bool IsGameComplete(GameId gameId)
+    {
+        switch (gameId)
+        {
+            case GameId.Identify:
+                return IsIdentifyComplete;
+
+            case GameId.BuildABug:
+                return IsBuildABugComplete;
+
+            default:
+                return false;
+        }
+    }
+
+    public bool IsOtherGameComplete(GameId currentGame)
+    {
+        switch (currentGame)
+        {
+            case GameId.Identify:
+                return IsBuildABugComplete;
+
+            case GameId.BuildABug:
+                return IsIdentifyComplete;
+
+            default:
+                return false;
+        }
+    }
+
+    public int GetCorrectCount(GameId gameId)
+    {
+        switch (gameId)
+        {
+            case GameId.Identify:
+                return identifyCorrectCount;
+
+            case GameId.BuildABug:
+                return buildABugCorrectCount;
+
+            default:
+                return 0;
+        }
+    }
+
+    public int GetRequiredCount(GameId gameId)
+    {
+        switch (gameId)
+        {
+            case GameId.Identify:
+                return identifyRequiredForCompletion;
+
+            case GameId.BuildABug:
+                return buildABugRequiredForCompletion;
+
+            default:
+                return 0;
+        }
     }
 
     public void SetFlag(string flagId)
@@ -150,10 +237,7 @@ public class GlobalProgressManager : MonoBehaviour
         if (fullCompletionAsset == null)
             return;
 
-        bool identifyComplete = identifyCorrectCount >= identifyRequiredForCompletion;
-        bool buildABugComplete = buildABugCorrectCount >= buildABugRequiredForCompletion;
-
-        if (!identifyComplete || !buildABugComplete)
+        if (!IsFullyComplete)
             return;
 
         if (fullCompletionRoutine == null)
