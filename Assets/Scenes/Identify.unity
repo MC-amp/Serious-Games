@@ -3633,6 +3633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202037334}
   - component: {fileID: 202037335}
+  - component: {fileID: 202037336}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -3752,6 +3753,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &202037336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202037333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b80f4712995114ab2331d9b872f9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicVolumeApplier
+  musicSource: {fileID: 202037335}
+  baseVolume: 1
 --- !u!1 &207832486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,6 +3842,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207832486}
   m_CullTransparentMesh: 1
+--- !u!4 &214126281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+  m_PrefabInstance: {fileID: 1547226418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &218740907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,6 +4774,7 @@ MonoBehaviour:
   rankSystem: {fileID: 1622783385}
   exemptToggles:
   - {fileID: 868424487}
+  - {fileID: 1389664026}
 --- !u!114 &254237271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5715,7 +5736,7 @@ GameObject:
   - component: {fileID: 309506422}
   - component: {fileID: 309506421}
   m_Layer: 6
-  m_Name: Compendium
+  m_Name: Compendium/Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5797,6 +5818,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 526379859}
+  - {fileID: 214126281}
   m_Father: {fileID: 1368382717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6090,7 +6112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &317713664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7714,7 +7737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &362216926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11093,7 +11117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &535531916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14276,7 +14301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &694446891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15372,6 +15397,7 @@ MonoBehaviour:
   rankSystem: {fileID: 1622783385}
   exemptToggles:
   - {fileID: 868424487}
+  - {fileID: 1389664026}
 --- !u!114 &761636637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17041,7 +17067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.7, y: 480.90005}
+  m_AnchoredPosition: {x: 1081, y: 888}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868424486
@@ -17331,7 +17357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &871979451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17971,7 +17998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &893597366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19199,7 +19227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &938443760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19827,6 +19856,7 @@ MonoBehaviour:
   rankSystem: {fileID: 1622783385}
   exemptToggles:
   - {fileID: 868424487}
+  - {fileID: 1389664026}
 --- !u!114 &957663459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24457,7 +24487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &1246089583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25685,7 +25716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &1285877290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26680,6 +26712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
   exemptToggles:
   - {fileID: 868424487}
+  - {fileID: 1389664026}
 --- !u!114 &1328768586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28411,6 +28444,17 @@ Transform:
   - {fileID: 1255409470}
   m_Father: {fileID: 2140367253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389664026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6698857596406455898, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+  m_PrefabInstance: {fileID: 1547226418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1 &1403959880
 GameObject:
   m_ObjectHideFlags: 0
@@ -30875,6 +30919,148 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!1001 &1547226418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 309506424}
+    m_Modifications:
+    - target: {fileID: 111502152367734916, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 111502152367734916, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 111502152367734916, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 554069685050029838, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 554069685050029838, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 554069685050029838, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 554069685050029838, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1885
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9720
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814790711331067151, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2309
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 869
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872518860228772518, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007069684724963816, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007069684724963816, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680829897666792113, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680829897666792113, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145242872253949817, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145242872253949817, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145242872253949817, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603023535724434240, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: openX
+      value: -3554
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760868337530314664, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+      propertyPath: m_Name
+      value: AudioSettingsUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2679280989051677359, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc1e92c11afcc7d41bb11676a5941ae0, type: 3}
 --- !u!1 &1550950860
 GameObject:
   m_ObjectHideFlags: 0
@@ -32686,7 +32872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &1640508376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35134,7 +35321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24d1a0bda27b7408f987dd1d107247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleReset
-  exemptToggles: []
+  exemptToggles:
+  - {fileID: 1389664026}
 --- !u!114 &1733173572
 MonoBehaviour:
   m_ObjectHideFlags: 0
