@@ -824,8 +824,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Once you're all done with the compendium,\nYou can press this button to
-    close it.\nOr you can simply click outside of the \ncompendium.\nTry it now!"
+  m_text: 'Once you''re all done with the compendium,
+
+    press the back button
+    to close it.
+
+
+    Try it now!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
   m_sharedMaterial: {fileID: 2741962919839006999, guid: 57d4b5a3ba0ad244582e8ab7d5bf31e4, type: 2}
