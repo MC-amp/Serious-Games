@@ -7033,6 +7033,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 691229505}
     m_Modifications:
     - target: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
+      propertyPath: showTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
+      propertyPath: slideSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
+      propertyPath: wrongsNeeded
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
+      propertyPath: shownPosition.y
+      value: 740
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465847722955612251, guid: 311054c1a59cc8d4dbec47500e0c7e3d, type: 3}
       propertyPath: compendiumOpenButton
       value: 
       objectReference: {fileID: 756945292}

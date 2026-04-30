@@ -41,9 +41,24 @@ public class SettingsPanelController : MonoBehaviour
     [Header("Reminder Toggle")]
     public Toggle reminderToggle;
 
+    [Header("Settings SFX")]
+    public AudioSource settingsAudioSource;
+    public AudioClip openClip;
+    public AudioClip closeClip;
+    public AudioClip backClip;
+    public AudioClip muteClip;
+    public AudioClip toggleClip;
+    public AudioClip sliderMoveClip;
+
+    [Header("Slider SFX Settings")]
+    public bool playSliderMoveSound = false;
+    public float sliderSoundCooldown = 0.15f;
+
     private bool isOpen = false;
+
     private float lastMusicVolume = 1f;
     private float lastUIVolume = 1f;
+    private float lastSliderSoundTime = -999f;
 
     void Start()
     {
@@ -56,7 +71,7 @@ public class SettingsPanelController : MonoBehaviour
             openSettingsButton.onClick.AddListener(OpenSettings);
 
         if (backButton != null)
-            backButton.onClick.AddListener(CloseSettings);
+            backButton.onClick.AddListener(CloseSettingsFromBackButton);
 
         if (outsideCloseButton != null)
         {
@@ -70,7 +85,6 @@ public class SettingsPanelController : MonoBehaviour
         if (uiMuteButton != null)
             uiMuteButton.onClick.AddListener(ToggleUIMute);
 
-        // Default reminders ON only if no setting exists yet
         if (!PlayerPrefs.HasKey("CompendiumRemindersEnabled"))
         {
             PlayerPrefs.SetInt("CompendiumRemindersEnabled", 1);
@@ -102,17 +116,13 @@ public class SettingsPanelController : MonoBehaviour
             bool remindersOn =
                 PlayerPrefs.GetInt("CompendiumRemindersEnabled", 1) == 1;
 
-            // Important: set the visual toggle WITHOUT triggering the listener
             reminderToggle.SetIsOnWithoutNotify(remindersOn);
-
             reminderToggle.onValueChanged.AddListener(SetReminderToggle);
         }
 
         ApplyAudioToScene();
         UpdateMuteIcons();
         UpdatePercentText();
-
-        Debug.Log("Reminder setting loaded as: " + PlayerPrefs.GetInt("CompendiumRemindersEnabled", 1));
     }
 
     void Update()
@@ -137,6 +147,8 @@ public class SettingsPanelController : MonoBehaviour
 
         if (openSettingsButton != null)
             openSettingsButton.interactable = false;
+
+        PlaySettingsSound(openClip);
     }
 
     public void CloseSettings()
@@ -148,6 +160,14 @@ public class SettingsPanelController : MonoBehaviour
 
         if (openSettingsButton != null)
             openSettingsButton.interactable = true;
+
+        PlaySettingsSound(closeClip);
+    }
+
+    public void CloseSettingsFromBackButton()
+    {
+        PlaySettingsSound(backClip);
+        CloseSettings();
     }
 
     void SetMusicVolume(float value)
@@ -161,6 +181,7 @@ public class SettingsPanelController : MonoBehaviour
         ApplyAudioToScene();
         UpdateMuteIcons();
         UpdatePercentText();
+        PlaySliderSound();
     }
 
     void SetUISounds(float value)
@@ -175,6 +196,7 @@ public class SettingsPanelController : MonoBehaviour
         ApplyAudioToScene();
         UpdateMuteIcons();
         UpdatePercentText();
+        PlaySliderSound();
     }
 
     void SetReminderToggle(bool enabled)
@@ -182,7 +204,7 @@ public class SettingsPanelController : MonoBehaviour
         PlayerPrefs.SetInt("CompendiumRemindersEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
 
-        Debug.Log("Compendium reminders saved as: " + enabled);
+        PlaySettingsSound(toggleClip);
     }
 
     void ToggleMusicMute()
@@ -198,6 +220,8 @@ public class SettingsPanelController : MonoBehaviour
         {
             musicSlider.value = lastMusicVolume;
         }
+
+        PlaySettingsSound(muteClip);
     }
 
     void ToggleUIMute()
@@ -213,6 +237,8 @@ public class SettingsPanelController : MonoBehaviour
         {
             uiSlider.value = lastUIVolume;
         }
+
+        PlaySettingsSound(muteClip);
     }
 
     void ApplyAudioToScene()
@@ -246,5 +272,23 @@ public class SettingsPanelController : MonoBehaviour
 
         if (uiPercentText != null && uiSlider != null)
             uiPercentText.text = Mathf.RoundToInt(uiSlider.value * 100f) + "%";
+    }
+
+    void PlaySettingsSound(AudioClip clip)
+    {
+        if (settingsAudioSource == null) return;
+        if (clip == null) return;
+
+        float volume = PlayerPrefs.GetFloat("UIVolume", 1f);
+        settingsAudioSource.PlayOneShot(clip, volume);
+    }
+
+    void PlaySliderSound()
+    {
+        if (!playSliderMoveSound) return;
+        if (Time.unscaledTime - lastSliderSoundTime < sliderSoundCooldown) return;
+
+        lastSliderSoundTime = Time.unscaledTime;
+        PlaySettingsSound(sliderMoveClip);
     }
 }

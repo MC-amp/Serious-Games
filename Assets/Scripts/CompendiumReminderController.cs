@@ -31,6 +31,8 @@ public class CompendiumReminderController : MonoBehaviour
     public float showTime = 4f;
     public float slideSpeed = 8f;
 
+    public float wrongRegisterCooldown = 0.25f;
+
     [Header("Optional")]
     public Button compendiumOpenButton;
 
@@ -40,6 +42,8 @@ public class CompendiumReminderController : MonoBehaviour
     private int wrongStreak = 0;
     private bool isShowing = false;
     private Coroutine reminderRoutine;
+
+    private float lastWrongRegisterTime = -999f;
 
     void Start()
     {
@@ -88,26 +92,31 @@ public class CompendiumReminderController : MonoBehaviour
         }
     }
 
-    public void RegisterWrong()
+   public void RegisterWrong()
+{
+    if (!RemindersEnabled())
     {
-        if (!RemindersEnabled())
-        {
-            if (debugLogs) Debug.Log("Reminder blocked because reminders are OFF.");
-            return;
-        }
-
-        wrongStreak++;
-
-        if (debugLogs)
-            Debug.Log("Wrong streak = " + wrongStreak + "/" + wrongsNeeded);
-
-        if (wrongStreak >= wrongsNeeded)
-        {
-            wrongStreak = 0;
-            ShowReminder();
-        }
+        if (debugLogs) Debug.Log("Reminder blocked because reminders are OFF.");
+        return;
     }
 
+    // Prevent one wrong answer from counting twice
+    if (Time.unscaledTime - lastWrongRegisterTime < wrongRegisterCooldown)
+        return;
+
+    lastWrongRegisterTime = Time.unscaledTime;
+
+    wrongStreak++;
+
+    if (debugLogs)
+        Debug.Log("Wrong streak = " + wrongStreak + "/" + wrongsNeeded);
+
+    if (wrongStreak >= wrongsNeeded)
+    {
+        wrongStreak = 0;
+        ShowReminder();
+    }
+}
     public void RegisterCorrect()
     {
         wrongStreak = 0;

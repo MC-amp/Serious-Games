@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class BookTutorialController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class BookTutorialController : MonoBehaviour
     public class ArrowStepSettings
     {
         public Button targetButton;
+        public Button[] extraAllowedButtons;
         public Vector2 arrowPosition;
         public float rotationZ;
         public ArrowMoveDirection moveDirection = ArrowMoveDirection.Horizontal;
@@ -35,13 +37,11 @@ public class BookTutorialController : MonoBehaviour
     [Header("Tutorial State")]
     public TutorialStep currentStep = TutorialStep.ClickBookButton;
 
-    [Header("Step Boxes (shown above compendium)")]
+    [Header("Step Boxes")]
     public GameObject step1Box;
     public GameObject step2Box;
     public GameObject step3Box;
     public GameObject step4Box;
-
-    [Header("Final Box (shown behind compendium)")]
     public Button finalBoxButton;
 
     [Header("Required Click Targets")]
@@ -49,8 +49,15 @@ public class BookTutorialController : MonoBehaviour
     public Button nextPageButton;
     public Button tutorialBookmarkButton;
 
-    [Header("Optional Menu Back Button")]
-    public Button menuBackButton;
+    [Header("Optional Menu Exit")]
+    public Button tutorialExitButton;
+
+    [Header("Buttons To Hide During Lock")]
+    public Button[] buttonsToHideDuringLock;
+
+    [Header("Button Locking")]
+    public bool lockButtonsDuringTutorial = true;
+    public bool allowExitButtonDuringTutorial = true;
 
     [Header("Arrow")]
     public RectTransform tutorialArrow;
@@ -70,8 +77,13 @@ public class BookTutorialController : MonoBehaviour
     private float currentArrowRotation;
     private ArrowMoveDirection currentMoveDirection;
 
+    private Dictionary<Selectable, bool> originalInteractableStates =
+        new Dictionary<Selectable, bool>();
+
     void Start()
     {
+        SaveOriginalButtonStates();
+
         if (bookButton != null)
             bookButton.onClick.AddListener(NotifyBookButtonClicked);
 
@@ -81,13 +93,11 @@ public class BookTutorialController : MonoBehaviour
         if (tutorialBookmarkButton != null)
             tutorialBookmarkButton.onClick.AddListener(NotifyBookmarkClicked);
 
-        // Final box returns to menu
-        if (finalBoxButton != null)
-            finalBoxButton.onClick.AddListener(ExitTutorial);
+        if (tutorialExitButton != null)
+            tutorialExitButton.onClick.AddListener(ExitTutorial);
 
-        // Optional separate menu back button returns to menu
-        if (menuBackButton != null)
-            menuBackButton.onClick.AddListener(ExitTutorial);
+        if (finalBoxButton != null)
+            finalBoxButton.onClick.AddListener(CompleteTutorial);
 
         RefreshTutorialUI();
     }
@@ -97,6 +107,24 @@ public class BookTutorialController : MonoBehaviour
         UpdateArrowPosition();
     }
 
+    void SaveOriginalButtonStates()
+    {
+        originalInteractableStates.Clear();
+
+        Selectable[] allSelectables = FindObjectsByType<Selectable>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
+        foreach (Selectable selectable in allSelectables)
+        {
+            if (selectable != null && !originalInteractableStates.ContainsKey(selectable))
+            {
+                originalInteractableStates.Add(selectable, selectable.interactable);
+            }
+        }
+    }
+
     void RefreshTutorialUI()
     {
         if (step1Box != null) step1Box.SetActive(currentStep == TutorialStep.ClickBookButton);
@@ -104,7 +132,6 @@ public class BookTutorialController : MonoBehaviour
         if (step3Box != null) step3Box.SetActive(currentStep == TutorialStep.ClickBookmark);
         if (step4Box != null) step4Box.SetActive(currentStep == TutorialStep.CloseCompendium);
 
-        // Final box shows only on final step, but does NOT auto-exit
         if (finalBoxButton != null)
             finalBoxButton.gameObject.SetActive(currentStep == TutorialStep.FinalMessage);
 
@@ -112,26 +139,121 @@ public class BookTutorialController : MonoBehaviour
         {
             case TutorialStep.ClickBookButton:
                 SetArrowFromSettings(step1Arrow);
+                LockButtonsExcept(step1Arrow);
                 break;
 
             case TutorialStep.ClickNextPage:
                 SetArrowFromSettings(step2Arrow);
+                LockButtonsExcept(step2Arrow);
                 break;
 
             case TutorialStep.ClickBookmark:
                 SetArrowFromSettings(step3Arrow);
+                LockButtonsExcept(step3Arrow);
                 break;
 
             case TutorialStep.CloseCompendium:
                 SetArrowFromSettings(step4Arrow);
+                LockButtonsExcept(step4Arrow);
                 break;
 
             case TutorialStep.FinalMessage:
+                HideArrow();
+                RestoreAllButtons();
+                break;
+
             case TutorialStep.Complete:
                 HideArrow();
+                RestoreAllButtons();
                 break;
         }
     }
+
+void LockButtonsExcept(ArrowStepSettings settings)
+{
+    if (!lockButtonsDuringTutorial)
+        return;
+
+    Selectable[] allSelectables = FindObjectsByType<Selectable>(
+        FindObjectsInactive.Include,
+        FindObjectsSortMode.None
+    );
+
+    foreach (Selectable selectable in allSelectables)
+    {
+        if (selectable == null) continue;
+
+        if (selectable.CompareTag("TutorialIgnore"))
+        {
+            selectable.interactable = true;
+            continue;
+        }
+
+        selectable.interactable = false;
+    }
+
+    if (settings != null && settings.targetButton != null)
+        settings.targetButton.interactable = true;
+
+    if (settings != null && settings.extraAllowedButtons != null)
+    {
+        for (int i = 0; i < settings.extraAllowedButtons.Length; i++)
+        {
+            if (settings.extraAllowedButtons[i] != null)
+                settings.extraAllowedButtons[i].interactable = true;
+        }
+    }
+
+    // Hide buttons EXCEPT the current target or allowed extra buttons
+    if (buttonsToHideDuringLock != null)
+    {
+        foreach (Button btn in buttonsToHideDuringLock)
+        {
+            if (btn == null) continue;
+
+            bool isTarget =
+                settings != null &&
+                settings.targetButton == btn;
+
+            bool isExtraAllowed = false;
+
+            if (settings != null && settings.extraAllowedButtons != null)
+            {
+                for (int i = 0; i < settings.extraAllowedButtons.Length; i++)
+                {
+                    if (settings.extraAllowedButtons[i] == btn)
+                    {
+                        isExtraAllowed = true;
+                        break;
+                    }
+                }
+            }
+
+            btn.gameObject.SetActive(isTarget || isExtraAllowed);
+        }
+    }
+}
+void RestoreAllButtons()
+{
+    foreach (var pair in originalInteractableStates)
+    {
+        if (pair.Key != null)
+            pair.Key.interactable = pair.Value;
+    }
+
+    // NEW: bring hidden buttons back
+    if (buttonsToHideDuringLock != null)
+    {
+        foreach (Button btn in buttonsToHideDuringLock)
+        {
+            if (btn != null)
+                btn.gameObject.SetActive(true);
+        }
+    }
+
+    if (finalBoxButton != null && currentStep == TutorialStep.FinalMessage)
+        finalBoxButton.interactable = true;
+}
 
     void SetArrowFromSettings(ArrowStepSettings settings)
     {
@@ -204,7 +326,6 @@ public class BookTutorialController : MonoBehaviour
         RefreshTutorialUI();
     }
 
-    // Called by BookButton.cs when the compendium closes
     public void NotifyCompendiumClosed()
     {
         if (currentStep != TutorialStep.CloseCompendium) return;
@@ -213,8 +334,18 @@ public class BookTutorialController : MonoBehaviour
         RefreshTutorialUI();
     }
 
+    public void CompleteTutorial()
+    {
+        if (currentStep != TutorialStep.FinalMessage) return;
+
+        currentStep = TutorialStep.Complete;
+        RefreshTutorialUI();
+        ExitTutorial();
+    }
+
     public void ExitTutorial()
     {
+        RestoreAllButtons();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }
